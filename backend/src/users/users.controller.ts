@@ -6,10 +6,16 @@ import {
     Patch,
     Param,
     Delete,
+    UseGuards,
 } from "@nestjs/common";
 import { UsersService } from "./users.service";
 import { CreateUserDto } from "./dto/create-user.dto";
 import { UpdateUserDto } from "./dto/update-user.dto";
+import { JwtAuthGuard } from "../guards/jwt-auth.guard";
+import Serialize from "../interceptors/serialize.interceptor";
+import { UserDto } from "./dto/user.dto";
+import CurrentUser from "../decorators/current-user.decorator";
+import { User } from "./entities/user.entity";
 
 @Controller("users")
 export class UsersController {
@@ -20,9 +26,11 @@ export class UsersController {
         return this.usersService.create(createUserDto);
     }
 
-    @Get()
-    findAll() {
-        return this.usersService.findAll();
+    @UseGuards(JwtAuthGuard)
+    @Get("/profile")
+    @Serialize(UserDto)
+    fetchUserProfile(@CurrentUser() user: User) {
+        return user;
     }
 
     @Get(":id")

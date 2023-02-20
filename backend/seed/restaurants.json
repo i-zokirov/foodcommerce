@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Restaurant A",
+        "email": "restauranta@example.com",
+        "phone": "+998 99 123 4567",
+        "website": "https://www.restauranta.com/",
+        "city": "Tashkent",
+        "street": "Mirabad",
+        "zipcode": "100015",
+        "lng": 69.256242,
+        "lat": 41.311081,
+        "logo": "https://www.restauranta.com/logo.png",
+        "banner": "https://www.restauranta.com/banner.jpg",
+        "min_order_value": 20000,
+        "delivery_supported": true,
+        "in_store_pickup": true
+    },
+    {
+        "name": "Restaurant B",
+        "email": "restaurantb@example.com",
+        "phone": "+998 99 987 6543",
+        "website": "https://www.restaurantb.com/",
+        "city": "Tashkent",
+        "street": "Chilanzar",
+        "zipcode": "100105",
+        "lng": 69.24604,
+        "lat": 41.297667,
+        "logo": "https://www.restaurantb.com/logo.png",
+        "banner": "https://www.restaurantb.com/banner.jpg",
+        "min_order_value": 25000,
+        "delivery_supported": true,
+        "in_store_pickup": false
+    },
+    {
+        "name": "Restaurant C",
+        "email": "restaurantc@example.com",
+        "phone": "+998 99 555 1234",
+        "website": "https://www.restaurantc.com/",
+        "city": "Tashkent",
+        "street": "Yunusabad",
+        "zipcode": "100084",
+        "lng": 69.249506,
+        "lat": 41.31859,
+        "logo": "https://www.restaurantc.com/logo.png",
+        "banner": "https://www.restaurantc.com/banner.jpg",
+        "min_order_value": 30000,
+        "delivery_supported": false,
+        "in_store_pickup": true
+    }
+]

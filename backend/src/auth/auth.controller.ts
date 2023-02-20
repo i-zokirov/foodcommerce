@@ -26,10 +26,4 @@ export class AuthController {
     register(@Body() userdata: CreateUserDto) {
         return this.authService.register(userdata);
     }
-    @UseGuards(JwtAuthGuard)
-    @Get("profile")
-    @Serialize(UserDto)
-    getProfile(@Request() req) {
-        return req.user;
-    }
 }
