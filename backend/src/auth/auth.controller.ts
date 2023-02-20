@@ -10,6 +10,8 @@ import { JwtAuthGuard } from "../guards/jwt-auth.guard";
 import { CreateUserDto } from "../users/dto/create-user.dto";
 import { LocalAuthGuard } from "../guards/local-auth.guard";
 import { AuthService } from "./auth.service";
+import Serialize from "../interceptors/serialize.interceptor";
+import { UserDto } from "../users/dto/user.dto";
 
 @Controller("auth")
 export class AuthController {
@@ -26,6 +28,7 @@ export class AuthController {
     }
     @UseGuards(JwtAuthGuard)
     @Get("profile")
+    @Serialize(UserDto)
     getProfile(@Request() req) {
         return req.user;
     }

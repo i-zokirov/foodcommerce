@@ -19,8 +19,10 @@ export class AuthService {
     }
     login(user: Partial<User>) {
         const payload = { email: user.email, sub: user.id };
+        const { password: _, ...rest } = user;
         return {
             access_token: this.jwtService.sign(payload),
+            ...rest,
         };
     }
 
