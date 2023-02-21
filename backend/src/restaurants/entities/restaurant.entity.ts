@@ -5,8 +5,10 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     OneToMany,
+    OneToOne,
 } from "typeorm";
 import { OpeningHours } from "./opening_hours.entity";
+import { User } from "../../users/entities/user.entity";
 
 @Entity()
 export class Restaurant {
@@ -40,7 +42,6 @@ export class Restaurant {
     delivery_supported: boolean;
     @Column({ default: true })
     in_store_pickup: boolean;
-
     @OneToMany(
         () => OpeningHours,
         (openinghours) => openinghours.restaurant_id,
@@ -51,4 +52,8 @@ export class Restaurant {
     createdAt: Date;
     @UpdateDateColumn()
     updatedAt: Date;
+    @OneToMany(() => User, (user) => user.restaurant)
+    managers: User[];
+    @OneToOne(() => User, { nullable: true, onDelete: "SET NULL" })
+    owner: User;
 }

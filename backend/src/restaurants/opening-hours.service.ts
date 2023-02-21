@@ -10,5 +10,25 @@ export class OpeningHoursService {
         private readonly repository: Repository<OpeningHours>
     ) {}
 
-    create() {}
+    async create(restaurantId: string, attrs: Partial<OpeningHours>) {
+        const openingHour = await this.repository.findOne({
+            where: { restaurant_id: restaurantId, weekday: attrs.weekday },
+        });
+        if (openingHour) {
+            Object.assign(openingHour, attrs);
+            return this.repository.save(openingHour);
+        } else {
+            const openinghour = this.repository.create(attrs);
+            return this.repository.save(openinghour);
+        }
+    }
+
+    findAll(restaurantId: string) {
+        return this.repository.find({
+            where: { restaurant_id: restaurantId },
+            order: {
+                weekday: "ASC",
+            },
+        });
+    }
 }

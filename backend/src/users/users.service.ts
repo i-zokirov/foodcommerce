@@ -10,7 +10,7 @@ export class UsersService {
     create(createUserDto: CreateUserDto) {
         const user = this.repository.create({
             ...createUserDto,
-            role: UserRole.Customer,
+            role: UserRole.Merchant,
         });
         return this.repository.save(user);
     }

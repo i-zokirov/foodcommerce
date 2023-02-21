@@ -1,10 +1,15 @@
+import { Restaurant } from "src/restaurants/entities/restaurant.entity";
 import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
+    ManyToMany,
+    ManyToOne,
+    OneToOne,
 } from "typeorm";
+
 export enum UserRole {
     Customer = "Customer",
     Merchant = "Merchant",
@@ -12,7 +17,7 @@ export enum UserRole {
 }
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: number;
     @Column()
     email: string;
@@ -28,4 +33,8 @@ export class User {
     createdAt: Date;
     @UpdateDateColumn()
     updatedAt: Date;
+    @ManyToOne(() => Restaurant, (restaurant) => restaurant.managers, {
+        onDelete: "SET NULL",
+    })
+    restaurant: Restaurant;
 }
