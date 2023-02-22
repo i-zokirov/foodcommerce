@@ -10,7 +10,7 @@ import {
     UseGuards,
     UnauthorizedException,
 } from "@nestjs/common";
-import { ApiOperation, ApiParam } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiOperation, ApiParam } from "@nestjs/swagger";
 import { RestaurantsService } from "./restaurants.service";
 import { CreateRestaurantDto } from "./dto/create-restaurant.dto";
 import { UpdateRestaurantDto } from "./dto/update-restaurant.dto";
@@ -36,9 +36,7 @@ export class RestaurantsController {
     // Create restaurant
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post()
-    @ApiOperation({
-        summary: "Route for creating a restaurant.",
-    })
+    @ApiBearerAuth()
     @Serialize(RestaurantDto)
     create(
         @CurrentUser() user: User,
@@ -53,9 +51,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Patch(":restaurantId")
-    @ApiOperation({
-        summary: "Route for updating a restaurant.",
-    })
+    @ApiBearerAuth()
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(RestaurantDto)
     update(
@@ -72,9 +68,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post("/:restaurantId/opening_hours")
-    @ApiOperation({
-        summary: "Route for creating an opening hour of a restaurant.",
-    })
+    @ApiBearerAuth()
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(OpeningHoursDto)
     async createOpeningHour(
@@ -97,9 +91,6 @@ export class RestaurantsController {
     }
 
     @Get("/:restaurantId/opening_hours")
-    @ApiOperation({
-        summary: "Route for getting opening hours for a restaurant.",
-    })
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(OpeningHoursDto)
     async getAllOpeningHours(@Param("restaurantId") restaurantId: string) {
@@ -112,9 +103,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Delete("/:restaurantId/opening_hours/:opening_hoursId")
-    @ApiOperation({
-        summary: "Route for getting opening hours for a restaurant.",
-    })
+    @ApiBearerAuth()
     @ApiParam({ name: "restaurantId", type: "string" })
     @ApiParam({ name: "opening_hoursId", type: "string" })
     @Serialize(OpeningHoursDto)
@@ -145,17 +134,19 @@ export class RestaurantsController {
 
     @Get("/open")
     @Serialize(RestaurantDto)
-    @ApiOperation({
-        summary: "Route for getting all open restaurants.",
-    })
     findOpenRestaurants() {
         return this.restaurantsService.findOpenRestaurants();
     }
 
+    @UseGuards(JwtAuthGuard, MerchantGuard)
+    @Get("/my")
+    @ApiBearerAuth()
+    @Serialize(RestaurantDto)
+    findMyRestaurants(@CurrentUser() user: User) {
+        return this.restaurantsService.findUserRestaurants(user.id);
+    }
+
     @Get(":restaurantId")
-    @ApiOperation({
-        summary: "Route for getting a restaurant.",
-    })
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(RestaurantDto)
     findOne(@Param("restaurantId") restaurantId: string) {
@@ -164,9 +155,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Delete(":restaurantId")
-    @ApiOperation({
-        summary: "Route for deleting a restaurant.",
-    })
+    @ApiBearerAuth()
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(RestaurantDto)
     remove(

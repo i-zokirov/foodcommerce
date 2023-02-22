@@ -6,6 +6,7 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     ManyToOne,
+    ManyToMany,
 } from "typeorm";
 
 export enum UserRole {
@@ -31,8 +32,8 @@ export class User {
     createdAt: Date;
     @UpdateDateColumn()
     updatedAt: Date;
-    @ManyToOne(() => Restaurant, (restaurant) => restaurant.managers, {
+    @ManyToMany(() => Restaurant, (restaurant) => restaurant.managers, {
         onDelete: "SET NULL",
     })
-    restaurant: Restaurant;
+    restaurants: Restaurant[];
 }

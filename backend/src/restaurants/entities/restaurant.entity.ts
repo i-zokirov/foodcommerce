@@ -5,6 +5,8 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     OneToMany,
+    ManyToMany,
+    JoinTable,
 } from "typeorm";
 import { OpeningHours } from "./opening_hours.entity";
 import { User } from "../../users/entities/user.entity";
@@ -53,7 +55,8 @@ export class Restaurant {
     createdAt: Date;
     @UpdateDateColumn()
     updatedAt: Date;
-    @OneToMany(() => User, (user) => user.restaurant)
+    @ManyToMany(() => User, (user) => user.restaurants)
+    @JoinTable()
     managers: User[];
 
     @OneToMany(() => MenuCategory, (category) => category.restaurant)

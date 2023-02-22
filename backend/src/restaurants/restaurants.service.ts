@@ -57,6 +57,20 @@ export class RestaurantsService {
             .getMany();
     }
 
+    findUserRestaurants(userId: string) {
+        return this.repository
+            .createQueryBuilder("restaurant")
+            .leftJoinAndMapMany(
+                "restaurant.opening_hours",
+                "opening_hours",
+                "opening_hours",
+                "opening_hours.restaurant_id = restaurant.id"
+            )
+            .leftJoinAndSelect("restaurant.managers", "managers")
+            .where("managers.id = :userId", { userId })
+            .getMany();
+    }
+
     findOne(id: string) {
         return this.repository
             .createQueryBuilder("restaurant")
