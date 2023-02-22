@@ -5,9 +5,7 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    ManyToMany,
     ManyToOne,
-    OneToOne,
 } from "typeorm";
 
 export enum UserRole {

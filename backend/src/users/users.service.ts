@@ -24,6 +24,11 @@ export class UsersService {
         return this.repository.findOne({ where: { email } });
     }
 
+    find(email: string) {
+        if (!email) return null;
+        return this.repository.find({ where: { email } });
+    }
+
     findById(id: string) {
         if (!id) return null;
         return this.repository.findOneBy({ id });
