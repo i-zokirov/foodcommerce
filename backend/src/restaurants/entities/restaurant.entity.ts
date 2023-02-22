@@ -6,6 +6,7 @@ import {
     UpdateDateColumn,
     OneToMany,
     OneToOne,
+    JoinColumn,
 } from "typeorm";
 import { OpeningHours } from "./opening_hours.entity";
 import { User } from "../../users/entities/user.entity";
@@ -54,6 +55,4 @@ export class Restaurant {
     updatedAt: Date;
     @OneToMany(() => User, (user) => user.restaurant)
     managers: User[];
-    @OneToOne(() => User, { nullable: true, onDelete: "SET NULL" })
-    owner: User;
 }

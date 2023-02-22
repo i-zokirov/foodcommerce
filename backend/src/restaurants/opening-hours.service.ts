@@ -1,4 +1,4 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { OpeningHours } from "./entities/opening_hours.entity";
@@ -30,5 +30,15 @@ export class OpeningHoursService {
                 weekday: "ASC",
             },
         });
+    }
+
+    async remove(opening_hoursId: string) {
+        const opening_hour = await this.repository.findOne({
+            where: { id: opening_hoursId },
+        });
+        if (!opening_hour) {
+            throw new NotFoundException();
+        }
+        return this.repository.remove(opening_hour);
     }
 }

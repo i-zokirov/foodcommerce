@@ -42,7 +42,4 @@ export class RestaurantDto {
             : []
     )
     managers: User[];
-    @Expose()
-    @Transform(({ obj }) => (obj.owner ? obj.owner.id : null))
-    owner: string;
 }

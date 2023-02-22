@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException } from "@nestjs/common";
+import {
+    Injectable,
+    NotFoundException,
+    UnauthorizedException,
+} from "@nestjs/common";
 import { Repository } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Restaurant } from "./entities/restaurant.entity";
@@ -66,19 +70,43 @@ export class RestaurantsService {
             .getOne();
     }
 
-    async update(id: string, updateRestaurantDto: UpdateRestaurantDto) {
-        const restaurant = await this.repository.findOne({ where: { id } });
+    async update(
+        id: string,
+        userId: string,
+        updateRestaurantDto: UpdateRestaurantDto
+    ) {
+        const restaurant = await this.repository.findOne({
+            where: { id },
+            relations: { managers: true },
+        });
         if (!restaurant) {
             throw new NotFoundException("Restaurant not found!");
+        }
+        if (
+            restaurant.managers &&
+            restaurant.managers.length &&
+            !restaurant.managers.some((manager) => manager.id === userId)
+        ) {
+            throw new UnauthorizedException("Not authorized!");
         }
         Object.assign(restaurant, updateRestaurantDto);
         return this.repository.save(restaurant);
     }
 
-    async remove(id: string) {
-        const restaurant = await this.repository.findOne({ where: { id } });
+    async remove(id: string, userId: string) {
+        const restaurant = await this.repository.findOne({
+            where: { id },
+            relations: { managers: true },
+        });
         if (!restaurant) {
             throw new NotFoundException("Restaurant not found!");
+        }
+        if (
+            restaurant.managers &&
+            restaurant.managers.length &&
+            !restaurant.managers.some((manager) => manager.id === userId)
+        ) {
+            throw new UnauthorizedException("Not authorized!");
         }
         return this.repository.remove(restaurant);
     }

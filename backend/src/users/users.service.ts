@@ -24,12 +24,12 @@ export class UsersService {
         return this.repository.findOne({ where: { email } });
     }
 
-    findById(id: number) {
+    findById(id: string) {
         if (!id) return null;
         return this.repository.findOneBy({ id });
     }
 
-    async update(id: number, attrs: Partial<User>) {
+    async update(id: string, attrs: Partial<User>) {
         const user = await this.findById(id);
         if (!user) {
             throw new NotFoundException("User not found");
@@ -38,7 +38,7 @@ export class UsersService {
         return this.repository.save(user);
     }
 
-    async remove(id: number) {
+    async remove(id: string) {
         const user = await this.findById(id);
         if (!user) {
             throw new NotFoundException("User not found");
