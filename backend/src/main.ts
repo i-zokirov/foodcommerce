@@ -8,11 +8,28 @@ import { AppModule } from "./app.module";
 
 const customOptions: SwaggerCustomOptions = {
     customSiteTitle: "foodcommerce API Doc",
+    swaggerOptions: {
+        authActions: {
+            bearerAuth: {
+                name: "Bearer",
+                schema: {
+                    type: "apiKey",
+                    in: "header",
+                    name: "Authorization",
+                },
+            },
+            value: "Bearer <JWT>",
+        },
+    },
 };
 const config = new DocumentBuilder()
     .setTitle("Food Delivery App")
     .setDescription("Food Delivery App backend API built with NestJS")
     .setVersion("1.0")
+    .addBearerAuth(
+        { type: "http", scheme: "bearer", bearerFormat: "JWT" },
+        "JWT"
+    )
     .addTag("foodcommerce")
     .build();
 

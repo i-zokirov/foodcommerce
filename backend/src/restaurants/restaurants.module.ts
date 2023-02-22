@@ -10,5 +10,6 @@ import { OpeningHoursService } from "./opening-hours.service";
     imports: [TypeOrmModule.forFeature([Restaurant, OpeningHours])],
     controllers: [RestaurantsController],
     providers: [RestaurantsService, OpeningHoursService],
+    exports: [RestaurantsService],
 })
 export class RestaurantsModule {}

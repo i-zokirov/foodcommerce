@@ -5,11 +5,11 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
     OneToMany,
-    OneToOne,
-    JoinColumn,
 } from "typeorm";
 import { OpeningHours } from "./opening_hours.entity";
 import { User } from "../../users/entities/user.entity";
+import { MenuCategory } from "../../menu_categories/entities/menu_category.entity";
+import { MenuItem } from "../../menu_items/entities/menu_item.entity";
 
 @Entity()
 export class Restaurant {
@@ -55,4 +55,9 @@ export class Restaurant {
     updatedAt: Date;
     @OneToMany(() => User, (user) => user.restaurant)
     managers: User[];
+
+    @OneToMany(() => MenuCategory, (category) => category.restaurant)
+    menu_categories: MenuCategory[];
+    @OneToMany(() => MenuItem, (item) => item.restaurant)
+    menu_items: MenuItem[];
 }

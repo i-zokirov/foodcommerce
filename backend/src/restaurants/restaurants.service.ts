@@ -66,6 +66,7 @@ export class RestaurantsService {
                 "opening_hours",
                 "opening_hours.restaurant_id = restaurant.id"
             )
+            .leftJoinAndSelect("restaurant.managers", "managers")
             .where("restaurant.id = :id", { id })
             .getOne();
     }
