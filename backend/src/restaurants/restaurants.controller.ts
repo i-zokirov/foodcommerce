@@ -10,7 +10,7 @@ import {
     UseGuards,
     UnauthorizedException,
 } from "@nestjs/common";
-import { ApiBearerAuth, ApiOperation, ApiParam } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiParam } from "@nestjs/swagger";
 import { RestaurantsService } from "./restaurants.service";
 import { CreateRestaurantDto } from "./dto/create-restaurant.dto";
 import { UpdateRestaurantDto } from "./dto/update-restaurant.dto";

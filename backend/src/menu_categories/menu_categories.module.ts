@@ -10,6 +10,7 @@ import { RestaurantsModule } from "../restaurants/restaurants.module";
     imports: [TypeOrmModule.forFeature([MenuCategory]), RestaurantsModule],
     controllers: [MenuCategoriesController],
     providers: [MenuCategoriesService],
+    exports: [MenuCategoriesService],
 })
 export class MenuCategoriesModule {
     configure(consumer: MiddlewareConsumer) {

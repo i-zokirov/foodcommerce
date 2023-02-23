@@ -2,12 +2,14 @@ import { Injectable, NestMiddleware, NotFoundException } from "@nestjs/common";
 import { Request, Response, NextFunction } from "express";
 import { RestaurantsService } from "../restaurants/restaurants.service";
 import { Restaurant } from "../restaurants/entities/restaurant.entity";
+import { MenuCategory } from "../menu_categories/entities/menu_category.entity";
 
 declare global {
     namespace Express {
         interface Request {
             restaurant?: Restaurant;
             user?: User;
+            menu_category?: MenuCategory;
         }
     }
 }

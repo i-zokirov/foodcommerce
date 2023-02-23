@@ -1,26 +1,79 @@
-import { Injectable } from '@nestjs/common';
-import { CreateMenuItemDto } from './dto/create-menu_item.dto';
-import { UpdateMenuItemDto } from './dto/update-menu_item.dto';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { CreateMenuItemDto } from "./dto/create-menu_item.dto";
+import { UpdateMenuItemDto } from "./dto/update-menu_item.dto";
+import { MenuItem } from "./entities/menu_item.entity";
 
 @Injectable()
 export class MenuItemsService {
-  create(createMenuItemDto: CreateMenuItemDto) {
-    return 'This action adds a new menuItem';
-  }
+    constructor(
+        @InjectRepository(MenuItem)
+        private readonly repository: Repository<MenuItem>
+    ) {}
+    create(itemAttr: Partial<MenuItem>) {
+        const menuitem = this.repository.create(itemAttr);
+        return this.repository.save(menuitem);
+    }
 
-  findAll() {
-    return `This action returns all menuItems`;
-  }
+    findAll(restaurantId: string) {
+        return this.repository.find({
+            where: {
+                restaurant: { id: restaurantId },
+            },
+            relations: {
+                restaurant: true,
+                category: true,
+            },
+        });
+    }
 
-  findOne(id: number) {
-    return `This action returns a #${id} menuItem`;
-  }
+    findByCategory(restaurantId: string, categoryId: string) {
+        return this.repository.find({
+            where: {
+                restaurant: { id: restaurantId },
+                category: { id: categoryId },
+            },
+            relations: {
+                restaurant: true,
+                category: true,
+            },
+        });
+    }
 
-  update(id: number, updateMenuItemDto: UpdateMenuItemDto) {
-    return `This action updates a #${id} menuItem`;
-  }
+    findOne(restaurantId: string, itemId: string) {
+        return this.repository.findOne({
+            where: {
+                restaurant: { id: restaurantId },
+                id: itemId,
+            },
+            relations: {
+                restaurant: true,
+                category: true,
+            },
+        });
+    }
 
-  remove(id: number) {
-    return `This action removes a #${id} menuItem`;
-  }
+    async update(menu_item_id: string, updateMenuItemDto: UpdateMenuItemDto) {
+        const menuItem = await this.repository.findOne({
+            where: { id: menu_item_id },
+        });
+        if (!menuItem) {
+            throw new NotFoundException("Menu Item not found!");
+        }
+
+        Object.assign(menuItem, { ...updateMenuItemDto });
+
+        return this.repository.save(menuItem);
+    }
+
+    async remove(menu_item_id: string) {
+        const menuItem = await this.repository.findOne({
+            where: { id: menu_item_id },
+        });
+        if (!menuItem) {
+            throw new NotFoundException("Menu Item not found!");
+        }
+        return this.repository.remove(menuItem);
+    }
 }
