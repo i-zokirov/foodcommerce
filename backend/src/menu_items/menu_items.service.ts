@@ -1,7 +1,6 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { CreateMenuItemDto } from "./dto/create-menu_item.dto";
 import { UpdateMenuItemDto } from "./dto/update-menu_item.dto";
 import { MenuItem } from "./entities/menu_item.entity";
 

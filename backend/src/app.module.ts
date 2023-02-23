@@ -7,11 +7,10 @@ import { UsersModule } from "./users/users.module";
 import { RestaurantsModule } from "./restaurants/restaurants.module";
 import { OrdersModule } from "./orders/orders.module";
 import { MenuItemsModule } from "./menu_items/menu_items.module";
-import { OrderItemsModule } from "./order_items/order_items.module";
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { TypeOrmConfigService } from "./config/typeorm.config";
 import { AuthModule } from "./auth/auth.module";
-import { MenuCategoriesModule } from './menu_categories/menu_categories.module';
+import { MenuCategoriesModule } from "./menu_categories/menu_categories.module";
 
 @Module({
     imports: [
@@ -24,7 +23,6 @@ import { MenuCategoriesModule } from './menu_categories/menu_categories.module';
         RestaurantsModule,
         OrdersModule,
         MenuItemsModule,
-        OrderItemsModule,
         AuthModule,
         MenuCategoriesModule,
     ],
