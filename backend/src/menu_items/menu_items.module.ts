@@ -16,6 +16,7 @@ import { CategoryMiddleware } from "../middleware/category.middleware";
     ],
     controllers: [MenuItemsController],
     providers: [MenuItemsService],
+    exports: [MenuItemsService],
 })
 export class MenuItemsModule {
     configure(consumer: MiddlewareConsumer) {

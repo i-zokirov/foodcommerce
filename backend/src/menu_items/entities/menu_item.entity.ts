@@ -1,6 +1,13 @@
-import { PrimaryGeneratedColumn, Column, Entity, ManyToOne } from "typeorm";
+import {
+    PrimaryGeneratedColumn,
+    Column,
+    Entity,
+    ManyToOne,
+    OneToMany,
+} from "typeorm";
 import { Restaurant } from "../../restaurants/entities/restaurant.entity";
 import { MenuCategory } from "../../menu_categories/entities/menu_category.entity";
+import { MenuItemOption } from "src/menu_item_options/entities/menu_item_option.entity";
 
 @Entity()
 export class MenuItem {
@@ -25,4 +32,8 @@ export class MenuItem {
         onDelete: "CASCADE",
     })
     restaurant: Restaurant;
+    @OneToMany(() => MenuItemOption, (option) => option.menu_item, {
+        onDelete: "CASCADE",
+    })
+    menu_item_options: MenuItemOption[];
 }

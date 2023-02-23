@@ -23,6 +23,7 @@ export class MenuItemsService {
             relations: {
                 restaurant: true,
                 category: true,
+                menu_item_options: true,
             },
         });
     }
@@ -36,6 +37,7 @@ export class MenuItemsService {
             relations: {
                 restaurant: true,
                 category: true,
+                menu_item_options: true,
             },
         });
     }
@@ -49,6 +51,7 @@ export class MenuItemsService {
             relations: {
                 restaurant: true,
                 category: true,
+                menu_item_options: true,
             },
         });
     }

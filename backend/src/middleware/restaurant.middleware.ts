@@ -3,6 +3,7 @@ import { Request, Response, NextFunction } from "express";
 import { RestaurantsService } from "../restaurants/restaurants.service";
 import { Restaurant } from "../restaurants/entities/restaurant.entity";
 import { MenuCategory } from "../menu_categories/entities/menu_category.entity";
+import { MenuItem } from "../menu_items/entities/menu_item.entity";
 
 declare global {
     namespace Express {
@@ -10,6 +11,7 @@ declare global {
             restaurant?: Restaurant;
             user?: User;
             menu_category?: MenuCategory;
+            menu_item?: MenuItem;
         }
     }
 }

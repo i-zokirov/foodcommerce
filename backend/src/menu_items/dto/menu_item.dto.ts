@@ -1,4 +1,5 @@
 import { Expose, Transform } from "class-transformer";
+import { MenuItemOption } from "../../menu_item_options/entities/menu_item_option.entity";
 
 export class MenuItemDto {
     @Expose()
@@ -17,4 +18,11 @@ export class MenuItemDto {
     @Expose()
     @Transform(({ obj }) => (obj.category ? obj.category.id : null))
     category_id: string;
+    @Expose()
+    @Transform(({ obj }) =>
+        obj.menu_item_options && obj.menu_item_options.length
+            ? obj.menu_item_options
+            : []
+    )
+    menu_item_options: MenuItemOption[];
 }
