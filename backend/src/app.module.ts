@@ -11,6 +11,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { TypeOrmConfigService } from "./config/typeorm.config";
 import { AuthModule } from "./auth/auth.module";
 import { MenuCategoriesModule } from "./menu_categories/menu_categories.module";
+import { MenuItemOptionsModule } from './menu_item_options/menu_item_options.module';
 
 @Module({
     imports: [
@@ -25,6 +26,7 @@ import { MenuCategoriesModule } from "./menu_categories/menu_categories.module";
         MenuItemsModule,
         AuthModule,
         MenuCategoriesModule,
+        MenuItemOptionsModule,
     ],
     controllers: [AppController],
     providers: [
