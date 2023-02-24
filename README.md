@@ -15,10 +15,15 @@ This is a web application for ordering food from restaurants that are registered
 ## Tech Stack
 
 **Client:**
+
 **Backend:** Node.js, NestJS, TypeScript
+
 **Database:** PostgreSQL
+
 **Real-time communication:** Socket.io
+
 **Authentication:** JSON Web Tokens (JWT)
+
 **API documentation:** Swagger
 
 ## Authors
