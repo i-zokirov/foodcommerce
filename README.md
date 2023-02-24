@@ -32,4 +32,4 @@ This is a web application for ordering food from restaurants that are registered
 
 ## License
 
-This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License - see the LICENSE.md file for details.
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License - see the [LICENSE.md](https://github.com/i-zokirov/foodcommerce/blob/master/LICENSE.md) file for details.
