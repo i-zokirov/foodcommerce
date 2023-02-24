@@ -1,3 +1,4 @@
+import { Order } from "src/orders/entities/order.entity";
 import { Restaurant } from "src/restaurants/entities/restaurant.entity";
 import {
     Entity,
@@ -5,8 +6,8 @@ import {
     PrimaryGeneratedColumn,
     CreateDateColumn,
     UpdateDateColumn,
-    ManyToOne,
     ManyToMany,
+    OneToMany,
 } from "typeorm";
 
 export enum UserRole {
@@ -28,6 +29,8 @@ export class User {
     lastname: string;
     @Column({ default: UserRole.Customer })
     role: string;
+    @OneToMany(() => Order, (order) => order.user)
+    orders: [];
     @CreateDateColumn()
     createdAt: Date;
     @UpdateDateColumn()
