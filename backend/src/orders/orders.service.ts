@@ -1,8 +1,9 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
+import { isEnum } from "class-validator";
 import { Repository } from "typeorm";
 import { UpdateOrderDto } from "./dto/update-order.dto";
-import { Order } from "./entities/order.entity";
+import { Order, OrderStatus } from "./entities/order.entity";
 
 @Injectable()
 export class OrdersService {
@@ -30,15 +31,60 @@ export class OrdersService {
         });
     }
 
-    findOne(id: number) {
-        return `This action returns a #${id} order`;
+    findAllUserOrders(userId: string, status: string) {
+        if (status && isEnum(status, OrderStatus)) {
+            return this.repository.find({
+                where: {
+                    user: {
+                        id: userId,
+                    },
+                    status: status as OrderStatus,
+                },
+                relations: {
+                    restaurant: true,
+                    user: true,
+                    order_items: true,
+                },
+            });
+        }
+        return this.repository.find({
+            where: {
+                user: {
+                    id: userId,
+                },
+            },
+
+            relations: {
+                restaurant: true,
+                user: true,
+                order_items: true,
+            },
+        });
+    }
+    findOne(restaurantId: string, orderId: string) {
+        return this.repository.findOne({
+            where: {
+                restaurant: {
+                    id: restaurantId,
+                },
+                id: orderId,
+            },
+
+            relations: {
+                restaurant: true,
+                user: true,
+                order_items: true,
+            },
+        });
     }
 
-    update(id: number, updateOrderDto: UpdateOrderDto) {
-        return `This action updates a #${id} order`;
-    }
-
-    remove(id: number) {
-        return `This action removes a #${id} order`;
+    async update(
+        restaurantId: string,
+        orderId: string,
+        updateOrderDto: UpdateOrderDto
+    ) {
+        const order = await this.findOne(restaurantId, orderId);
+        Object.assign(order, { ...updateOrderDto });
+        return this.repository.save(order);
     }
 }

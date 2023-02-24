@@ -5,9 +5,9 @@ import {
     Body,
     Patch,
     Param,
-    Delete,
     UseGuards,
     NotFoundException,
+    Query,
 } from "@nestjs/common";
 import { ApiBearerAuth, ApiParam } from "@nestjs/swagger";
 import { OrdersService } from "./orders.service";
@@ -27,9 +27,9 @@ import { OrderItemsService } from "./order_items.service";
 import Serialize from "src/interceptors/serialize.interceptor";
 import { OrderDto } from "./dto/order.dto";
 import { VerifyRestaurantManager } from "src/interceptors/verify-restaurant-manager.interceptor";
+import MerchantGuard from "src/guards/merchant.guard";
 
 @Controller("orders")
-@UseGuards(JwtAuthGuard)
 @Serialize(OrderDto)
 @ApiBearerAuth()
 export class OrdersController {
@@ -40,6 +40,7 @@ export class OrdersController {
         private readonly menuItemsService: MenuItemsService
     ) {}
 
+    @UseGuards(JwtAuthGuard)
     @ApiParam({ type: "string", name: "restaurantId" })
     @Post("/restaurants/:restaurantId")
     async create(
@@ -151,9 +152,11 @@ export class OrdersController {
             }
         }
 
-        return Object.assign(order, { order_items: savedOrderItems });
+        Object.assign(savedorder, { order_items: savedOrderItems });
+        return savedorder;
     }
 
+    @UseGuards(JwtAuthGuard, MerchantGuard)
     @ApiParam({ type: "string", name: "restaurantId" })
     @Get("/restaurants/:restaurantId")
     @VerifyRestaurantManager()
@@ -161,21 +164,34 @@ export class OrdersController {
         return this.ordersService.findAll(id);
     }
 
-    @Get(":orderId")
-    findOne(@Param("orderId") orderId: string) {
-        return this.ordersService.findOne(+orderId);
+    @UseGuards(JwtAuthGuard, MerchantGuard)
+    @ApiParam({ type: "string", name: "restaurantId" })
+    @ApiParam({ type: "string", name: "orderId" })
+    @Get("/:orderId/restaurants/:restaurantId")
+    @VerifyRestaurantManager()
+    findOne(
+        @Param("orderId") orderId: string,
+        @Param("restaurantId") restaurantId: string
+    ) {
+        return this.ordersService.findOne(restaurantId, orderId);
     }
 
-    @Patch(":orderId")
+    @UseGuards(JwtAuthGuard, MerchantGuard)
+    @ApiParam({ type: "string", name: "restaurantId" })
+    @ApiParam({ type: "string", name: "orderId" })
+    @Patch("/:orderId/restaurants/:restaurantId")
+    @VerifyRestaurantManager()
     update(
+        @Param("restaurantId") restaurantId: string,
         @Param("orderId") orderId: string,
         @Body() updateOrderDto: UpdateOrderDto
     ) {
-        return this.ordersService.update(+orderId, updateOrderDto);
+        return this.ordersService.update(restaurantId, orderId, updateOrderDto);
     }
 
-    @Delete(":orderId")
-    remove(@Param("orderId") orderId: string) {
-        return this.ordersService.remove(+orderId);
+    @UseGuards(JwtAuthGuard)
+    @Get("/my")
+    findMyOrders(@CurrentUser() user: User, @Query("status") status: string) {
+        return this.ordersService.findAllUserOrders(user.id, status);
     }
 }

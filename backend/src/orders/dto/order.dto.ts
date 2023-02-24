@@ -4,6 +4,8 @@ import { OrderItemDto } from "./order_item.dto";
 
 export class OrderDto {
     @Expose()
+    id: string;
+    @Expose()
     @Transform(({ obj }) => obj.user.id)
     user_id: string;
     @Expose()
