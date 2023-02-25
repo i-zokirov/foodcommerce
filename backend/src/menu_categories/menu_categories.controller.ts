@@ -31,7 +31,7 @@ export class MenuCategoriesController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post()
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     create(
         @CurrentRestaurant() restaurant: Restaurant,
@@ -62,7 +62,7 @@ export class MenuCategoriesController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Patch(":categoryId")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @ApiParam({ name: "categoryId", type: "string" })
     async update(
@@ -78,7 +78,7 @@ export class MenuCategoriesController {
     }
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @ApiParam({ name: "categoryId", type: "string" })
     @Delete(":categoryId")

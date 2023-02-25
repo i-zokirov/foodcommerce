@@ -54,7 +54,7 @@ export class MenuItemsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Patch("/menu_items/:menu_item_id")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "menu_item_id", type: "string" })
     update(
         @Param("menu_item_id") menu_item_id: string,
@@ -65,7 +65,7 @@ export class MenuItemsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Delete("/menu_items/:menu_item_id")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "menu_item_id", type: "string" })
     remove(@Param("menu_item_id") menu_item_id: string) {
         return this.menuItemsService.remove(menu_item_id);
@@ -73,7 +73,7 @@ export class MenuItemsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post("/menu_categories/:categoryId/menu_items")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @ApiParam({ name: "categoryId", type: "string" })
     create(

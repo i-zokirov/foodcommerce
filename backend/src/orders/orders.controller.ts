@@ -31,7 +31,7 @@ import MerchantGuard from "src/guards/merchant.guard";
 
 @Controller("orders")
 @Serialize(OrderDto)
-@ApiBearerAuth()
+@ApiBearerAuth("JWT")
 export class OrdersController {
     constructor(
         private readonly ordersService: OrdersService,

@@ -16,8 +16,10 @@ import Serialize from "../interceptors/serialize.interceptor";
 import { UserDto } from "./dto/user.dto";
 import CurrentUser from "../decorators/current-user.decorator";
 import { User } from "./entities/user.entity";
+import { ApiBearerAuth } from "@nestjs/swagger";
 
 @Controller("users")
+@Serialize(UserDto)
 export class UsersController {
     constructor(private readonly usersService: UsersService) {}
 
@@ -28,7 +30,7 @@ export class UsersController {
 
     @UseGuards(JwtAuthGuard)
     @Get("/profile")
-    @Serialize(UserDto)
+    @ApiBearerAuth("JWT")
     fetchUserProfile(@CurrentUser() user: User) {
         return user;
     }

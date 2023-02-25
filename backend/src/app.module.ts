@@ -1,6 +1,6 @@
 import { Module, ValidationPipe } from "@nestjs/common";
 import { APP_PIPE } from "@nestjs/core";
-import { ConfigModule, ConfigService } from "@nestjs/config";
+import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 import { UsersModule } from "./users/users.module";
@@ -11,7 +11,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { TypeOrmConfigService } from "./config/typeorm.config";
 import { AuthModule } from "./auth/auth.module";
 import { MenuCategoriesModule } from "./menu_categories/menu_categories.module";
-import { MenuItemOptionsModule } from './menu_item_options/menu_item_options.module';
+import { MenuItemOptionsModule } from "./menu_item_options/menu_item_options.module";
 
 @Module({
     imports: [

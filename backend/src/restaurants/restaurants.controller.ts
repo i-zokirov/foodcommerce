@@ -36,7 +36,7 @@ export class RestaurantsController {
     // Create restaurant
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post()
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @Serialize(RestaurantDto)
     create(
         @CurrentUser() user: User,
@@ -51,7 +51,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Patch(":restaurantId")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(RestaurantDto)
     update(
@@ -68,7 +68,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Post("/:restaurantId/opening_hours")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(OpeningHoursDto)
     async createOpeningHour(
@@ -103,7 +103,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Delete("/:restaurantId/opening_hours/:opening_hoursId")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @ApiParam({ name: "opening_hoursId", type: "string" })
     @Serialize(OpeningHoursDto)
@@ -140,7 +140,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Get("/my")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @Serialize(RestaurantDto)
     findMyRestaurants(@CurrentUser() user: User) {
         return this.restaurantsService.findUserRestaurants(user.id);
@@ -155,7 +155,7 @@ export class RestaurantsController {
 
     @UseGuards(JwtAuthGuard, MerchantGuard)
     @Delete(":restaurantId")
-    @ApiBearerAuth()
+    @ApiBearerAuth("JWT")
     @ApiParam({ name: "restaurantId", type: "string" })
     @Serialize(RestaurantDto)
     remove(
