@@ -4,7 +4,7 @@
     "description": "",
     "author": "Ikboljon Zokirov",
     "private": true,
-    "license": "UNLICENSED",
+    "license": "LICENSED",
     "scripts": {
         "build": "nest build",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -17,7 +17,9 @@
         "test:watch": "jest --watch",
         "test:cov": "jest --coverage",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-        "test:e2e": "jest --config ./test/jest-e2e.json"
+        "test:e2e": "jest --config ./test/jest-e2e.json",
+        "typeorm": "npm run build && npx typeorm -d dist/db/data-source.js",
+        "migration:generate": "npm run typeorm -- migration:generate "
     },
     "dependencies": {
         "@nestjs/common": "^9.0.0",
@@ -35,10 +37,11 @@
         "passport": "^0.6.0",
         "passport-jwt": "^4.0.1",
         "passport-local": "^1.0.0",
+        "pg": "^8.9.0",
         "reflect-metadata": "^0.1.13",
         "rxjs": "^7.8.0",
         "sqlite3": "^5.1.4",
-        "typeorm": "^0.3.12"
+        "typeorm": "^0.3.10"
     },
     "devDependencies": {
         "@nestjs/cli": "^9.0.0",

@@ -1,5 +1,3 @@
-import { Order } from "src/orders/entities/order.entity";
-import { Restaurant } from "src/restaurants/entities/restaurant.entity";
 import {
     Entity,
     Column,
@@ -9,7 +7,9 @@ import {
     ManyToMany,
     OneToMany,
 } from "typeorm";
-
+import { Order } from "../../orders/entities/order.entity";
+import { Restaurant } from "../../restaurants/entities/restaurant.entity";
+import { UserAddress } from "./user.address.entity";
 export enum UserRole {
     Customer = "Customer",
     Merchant = "Merchant",
@@ -19,7 +19,7 @@ export enum UserRole {
 export class User {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column()
+    @Column({ unique: true })
     email: string;
     @Column()
     password: string;
@@ -39,4 +39,7 @@ export class User {
         onDelete: "SET NULL",
     })
     restaurants: Restaurant[];
+
+    @OneToMany(() => UserAddress, (address) => address.user)
+    registered_addresses: UserAddress[];
 }
