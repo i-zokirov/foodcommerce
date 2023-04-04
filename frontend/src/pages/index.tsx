@@ -1,3 +1,4 @@
+import CountTo from "@/components/CountTo";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
 export default function Home() {
@@ -396,12 +397,8 @@ export default function Home() {
                             data-aos-duration={400}
                         >
                             <div className="count-time">
-                                <h2
-                                    className="timer count-title count-number"
-                                    data-to={976}
-                                    data-speed={2000}
-                                >
-                                    976
+                                <h2 className="timer count-title count-number">
+                                    <CountTo from={0} to={976} decimals={1} />
                                 </h2>
                                 <p>
                                     Satisfied
@@ -413,16 +410,12 @@ export default function Home() {
                         <div
                             className="col-lg-3 col-md-6 col-sm-12"
                             data-aos="flip-up"
-                            data-aos-delay={400}
-                            data-aos-duration={500}
+                            data-aos-delay={300}
+                            data-aos-duration={400}
                         >
                             <div className="count-time">
-                                <h2
-                                    className="timer count-title count-number"
-                                    data-to={12}
-                                    data-speed={2000}
-                                >
-                                    12
+                                <h2 className="timer count-title count-number">
+                                    <CountTo from={0} to={12} decimals={1} />
                                 </h2>
                                 <p>
                                     Best
@@ -434,16 +427,12 @@ export default function Home() {
                         <div
                             className="col-lg-3 col-md-6 col-sm-12"
                             data-aos="flip-up"
-                            data-aos-delay={500}
-                            data-aos-duration={600}
+                            data-aos-delay={300}
+                            data-aos-duration={400}
                         >
                             <div className="count-time sp">
-                                <h2
-                                    className="timer count-title count-number"
-                                    data-to={1}
-                                    data-speed={2000}
-                                >
-                                    1
+                                <h2 className="timer count-title count-number">
+                                    <CountTo from={0} to={1000} decimals={1} />
                                 </h2>
                                 <span>k+</span>
                                 <p>
