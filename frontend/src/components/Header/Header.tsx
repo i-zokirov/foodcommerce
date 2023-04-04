@@ -86,25 +86,23 @@ const Header = () => {
                                             id="Quickeat"
                                             transform="translate(320 77)"
                                             fill="#363636"
-                                            font-size="20"
-                                            font-family="Poppins"
-                                            font-weight="700"
+                                            fontSize="20"
+                                            fontFamily="Poppins"
+                                            fontWeight="700"
                                         >
                                             <tspan x="0" y="0">
-                                                QUICK
+                                                Delivery
                                             </tspan>
                                             <tspan y="0" fill="#f29f05">
-                                                EAT
+                                                App
                                             </tspan>
                                         </text>
                                     </g>
                                 </svg>
                             </a>
                             <div className="extras bag">
-                                <a
-                                    href="javascript:void(0)"
-                                    className="menu-btn"
-                                >
+                                <a href="#" className="menu-btn">
+                                    {/* <FaShoppingBag className="icon" /> */}
                                     <i className="fa-solid fa-bag-shopping"></i>
                                 </a>
                                 <div className="bar-menu">
@@ -160,11 +158,8 @@ const Header = () => {
                     </div>
                     <div className="col-lg-3">
                         <div className="extras bag">
-                            <a
-                                href="javascript:void(0)"
-                                id="desktop-menu"
-                                className="menu-btn"
-                            >
+                            <a href="#" id="desktop-menu" className="menu-btn">
+                                {/* <FaShoppingBag className="icon" /> */}
                                 <i className="fa-solid fa-bag-shopping"></i>
                             </a>
                             <a href="#" className="button button-2">
@@ -223,7 +218,6 @@ const Header = () => {
                                                         type="number"
                                                         name="product-qty"
                                                         min="0"
-                                                        value="1"
                                                     />
                                                     <button
                                                         className="qty-count qty-count--add"
@@ -270,7 +264,6 @@ const Header = () => {
                                                         type="number"
                                                         name="product-qty"
                                                         min="0"
-                                                        value="1"
                                                     />
                                                     <button
                                                         className="qty-count qty-count--add"
@@ -380,9 +373,9 @@ const Header = () => {
                                             id="Quickeat"
                                             transform="translate(320 77)"
                                             fill="#363636"
-                                            font-size="20"
-                                            font-family="Poppins"
-                                            font-weight="700"
+                                            fontSize="20"
+                                            fontFamily="Poppins"
+                                            fontWeight="700"
                                         >
                                             <tspan x="0" y="0">
                                                 QUICK
@@ -405,7 +398,7 @@ const Header = () => {
                             </li>
 
                             <li className="menu-item-has-children">
-                                <a href="JavaScript:void(0)">Restaurants</a>
+                                <a href="#">Restaurants</a>
 
                                 <ul className="sub-menu">
                                     <li>
@@ -424,7 +417,7 @@ const Header = () => {
                                 </ul>
                             </li>
                             <li className="menu-item-has-children">
-                                <a href="JavaScript:void(0)">Pages</a>
+                                <a href="#">Pages</a>
 
                                 <ul className="sub-menu">
                                     <li>
@@ -462,7 +455,7 @@ const Header = () => {
                             </li>
                         </ul>
 
-                        <a href="JavaScript:void(0)" id="res-cross"></a>
+                        <a href="#" id="res-cross"></a>
                     </div>
                 </div>
             </div>

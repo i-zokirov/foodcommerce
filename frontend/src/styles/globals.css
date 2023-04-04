@@ -1322,17 +1322,17 @@ ul.paragraph li i {
 }
 .chevron::before {
     top: 0;
-    -webkit-transform: skew(20deg, 0deg);
+    --webkit-transform: skew(20deg, 0deg);
 }
 .chevron::after {
     bottom: 0;
-    -webkit-transform: skew(-20deg, 0deg);
+    --webkit-transform: skew(-20deg, 0deg);
 }
 .chevron--left::before {
-    -webkit-transform: skew(-20deg, 0deg);
+    --webkit-transform: skew(-20deg, 0deg);
 }
 .chevron--left::after {
-    -webkit-transform: skew(20deg, 0deg);
+    --webkit-transform: skew(20deg, 0deg);
 }
 .banner-wilmington {
     display: flex;
@@ -2967,7 +2967,7 @@ body.menu-layer:before {
 }
 .menu-bar nav > ul > li.menu-item-has-children > a:before {
     content: "";
-    background-image: url(../img/down-arrow.svg);
+    background-image: url("../../public/assets/img/down-arrow.svg");
     background-repeat: no-repeat;
     position: absolute;
     top: 53%;
@@ -3166,7 +3166,7 @@ i#nav-icon4 {
     content: "";
     width: 25px;
     height: 25px;
-    background-image: url("../images/remove.svg");
+    background-image: url("../../public/assets/img/remove.svg");
     background-repeat: no-repeat;
     position: absolute;
     top: -5px;
@@ -3209,7 +3209,7 @@ i#nav-icon4 {
 }
 .mobile-nav > ul > li.menu-item-has-children:before {
     content: "";
-    background-image: url(../img/down-arrow.svg);
+    background-image: url("../../public/assets/img/down-arrow.svg");
     background-repeat: no-repeat;
     position: absolute;
     top: 25px;
@@ -3222,7 +3222,7 @@ i#nav-icon4 {
     -o-transform: rotate(-90deg);
 }
 .mobile-nav > ul > li.menu-item-has-children.active:before {
-    background-image: url(../img/down-arrow-clr.svg);
+    background-image: url("../../public/assets/img/down-arrow-clr.svg");
     transform: rotate(0deg);
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -3340,7 +3340,7 @@ li.menu-item-has-children.active {
     content: "";
     width: 35px;
     height: 35px;
-    background-image: url("../img/remove.svg");
+    background-image: url("../../public/assets/img/remove.svg");
     background-repeat: no-repeat;
     position: absolute;
     top: 15px;

@@ -1,0 +1,18 @@
+<svg id="Clock_Icon" data-name="Clock Icon" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+  <rect id="frame" width="68" height="68" fill="none"/>
+  <g id="Elements" transform="translate(1.889 1.889)">
+    <circle id="Ellipse_70" data-name="Ellipse 70" cx="32" cy="32" r="32" transform="translate(0.111 0.111)" fill="rgba(0,0,0,0)" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2446" data-name="Path 2446" d="M471.862,470.7c-11.6-2.766-20.2-12.864-20.2-24.9,0-14.164,11.912-25.647,26.607-25.647" transform="translate(-444.723 -413.209)" fill="rgba(0,0,0,0)" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2447" data-name="Path 2447" d="M485.2,420.96c11.565,2.787,20.132,12.87,20.132,24.882,0,14.164-11.912,25.647-26.606,25.647" transform="translate(-447.068 -413.222)" fill="rgba(0,0,0,0)" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2448" data-name="Path 2448" d="M478.729,420.153" transform="translate(-446.137 -413.209)" fill="rgba(0,0,0,0)" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Union_1" data-name="Union 1" d="M4.357,10.932A2.868,2.868,0,0,1,5.2,8.9L0,3.778,5.2,8.9a2.873,2.873,0,0,1,4.075,0L18.889,0,9.271,8.905a2.874,2.874,0,1,1-4.913,2.027Z" transform="translate(25.501 21.722)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_17" data-name="Line 17" x2="0.965" transform="translate(12.18 32.56)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_18" data-name="Line 18" x2="0.965" transform="translate(52.126 32.56)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_19" data-name="Line 19" y1="6.203" transform="translate(32.621 52.064)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_20" data-name="Line 20" y1="6.139" transform="translate(32.621 6.944)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_21" data-name="Line 21" x2="0.682" y2="0.682" transform="translate(17.916 17.855)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_22" data-name="Line 22" x2="0.682" y2="0.682" transform="translate(46.644 46.583)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_23" data-name="Line 23" y1="0.682" x2="0.682" transform="translate(17.916 46.583)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_24" data-name="Line 24" y1="0.682" x2="0.682" transform="translate(46.644 17.855)" fill="none" stroke="#f29f05" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

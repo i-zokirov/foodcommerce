@@ -1,0 +1,13 @@
+<svg id="Service_Icon" data-name="Service Icon" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+  <rect id="frame" width="68" height="68" fill="none"/>
+  <g id="Elements" transform="translate(3.778 1.889)">
+    <path id="Path_2440" data-name="Path 2440" d="M896.617,309.123l12.5-5.145a2.222,2.222,0,0,1,2.735.883l.78,1.256a2.223,2.223,0,0,1-.659,3.024l-16.858,11.2a9.072,9.072,0,0,1-5.519,1.5l-20.285-1.108" transform="translate(-857.72 -260.765)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2441" data-name="Path 2441" d="M863.9,310.086c4.108-6.237,13.95-8.233,18.126-3.275l7.818.427a1.719,1.719,0,0,1,1.624,1.81l-.143,2.634a1.719,1.719,0,0,1-1.811,1.623l-9.552-.521" transform="translate(-855.302 -260.599)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <rect id="Rectangle_311" data-name="Rectangle 311" width="16.54" height="7.551" transform="translate(7.463 46.722) rotate(81.21)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <line id="Line_14" data-name="Line 14" x2="58.462" transform="translate(1.982 34.166)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2442" data-name="Path 2442" d="M910.325,297.151l-.838,1.283H862.713l-2.738-4.19" transform="translate(-854.923 -259.467)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2443" data-name="Path 2443" d="M908.746,285.464c0-12.431-9.778-22.508-21.84-22.508s-21.839,10.077-21.839,22.508v4.027" transform="translate(-855.972 -255.927)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2444" data-name="Path 2444" d="M886.615,258.217a3.042,3.042,0,1,1,6.084,0" transform="translate(-858.476 -255.175)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2445" data-name="Path 2445" d="M873.443,278.4a16.07,16.07,0,0,1,7.846-7.154" transform="translate(-856.823 -256.951)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

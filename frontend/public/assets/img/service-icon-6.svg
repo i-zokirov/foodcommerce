@@ -1,0 +1,13 @@
+<svg id="Price_Icon" data-name="Price Icon" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
+  <rect id="frame" width="68" height="68" fill="none"/>
+  <g id="Elements" transform="translate(1.889 7.556)">
+    <g id="Group_927" data-name="Group 927" transform="translate(20.908 19.669)">
+      <path id="Path_2450" data-name="Path 2450" d="M467.05,288.922c-1.256,1.256-.757,3.789,1.113,5.659s3.9,2.877,5.659,1.113.756-3.789-1.114-5.659h0c-1.87-1.87-2.76-4.012-1.113-5.659s3.789-.756,5.658,1.114,2.368,4.4,1.114,5.658" transform="translate(-466.027 -283.511)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_25" data-name="Line 25" y1="2.035" x2="2.035" transform="translate(11.196 0.154)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+      <line id="Line_26" data-name="Line 26" y1="2.035" x2="2.035" transform="translate(0 10.975)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    </g>
+    <path id="Path_2451" data-name="Path 2451" d="M496.71,280.284v3.07l-30.549,29.591-24.051-23.3,30.549-29.592H485.5l11.211,10.859v4.194" transform="translate(-442.11 -260.056)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2452" data-name="Path 2452" d="M492.285,276.636a3.878,3.878,0,1,1,0-5.485A3.879,3.879,0,0,1,492.285,276.636Z" transform="translate(-447.496 -261.616)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_2453" data-name="Path 2453" d="M492.165,274.771c5.954,2.007,24.383,5.464,19.66,15.712,0,0-3.183,6.353-11,4.094" transform="translate(-448.369 -262.561)" fill="none" stroke="#fff" stroke-linecap="square" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>

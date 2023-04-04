@@ -2,7 +2,10 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="gap no-bottom">
+        <footer
+            className="gap no-bottom"
+            style={{ backgroundColor: "#363636" }}
+        >
             <div className="container">
                 <div className="row">
                     <div className="col-lg-5 col-md-6 col-sm-12">
@@ -86,9 +89,9 @@ const Footer = () => {
                                             id="Quickeat"
                                             transform="translate(320 77)"
                                             fill="#fff"
-                                            font-size="20"
-                                            font-family="Poppins"
-                                            font-weight="700"
+                                            fontSize="20"
+                                            fontFamily="Poppins"
+                                            fontWeight="700"
                                         >
                                             <tspan x="0" y="0">
                                                 QUICK
