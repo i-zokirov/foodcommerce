@@ -159,10 +159,10 @@ figure {
     padding-left: 30px;
 }
 .navbar-links li a:hover {
-    color: #f29f05;
+    color: #ff8000;
 }
 .navbar-links li.active > a {
-    color: #f29f05;
+    color: #ff8000;
 }
 .navbar-links li > a:after {
     content: "";
@@ -176,7 +176,7 @@ figure {
     transition: 0.4s all;
 }
 .navbar-links li.active > a:after {
-    background: #f29f05;
+    background: #ff8000;
 }
 .navbar-links li a {
     border: 1px solid transparent;
@@ -224,7 +224,7 @@ header {
 .restaurant .nice-select .option:hover,
 .restaurant .nice-select .option.focus,
 .restaurant .nice-select .option.selected.focus {
-    background: #f29f05;
+    background: #ff8000;
     color: black;
 }
 .restaurant .nice-select.open .list {
@@ -285,7 +285,7 @@ header {
 }
 .wilmington.location-restaurant i {
     font-size: 18px;
-    background-color: #f29f05;
+    background-color: #ff8000;
     color: white;
     border-radius: 33px;
     height: 40px;
@@ -310,13 +310,13 @@ header {
 }
 .button-2 {
     color: #fff;
-    border: 2px solid #f29f05;
+    border: 2px solid #ff8000;
     background-image: -webkit-linear-gradient(
         30deg,
-        #f29f05 50%,
+        #ff8000 50%,
         transparent 50%
     );
-    background-image: linear-gradient(30deg, #f29f05 50%, transparent 50%);
+    background-image: linear-gradient(30deg, #ff8000 50%, transparent 50%);
     background-size: 500px;
     background-repeat: no-repeat;
     background-position: 0%;
@@ -403,7 +403,7 @@ header {
 
 .cafa-button a {
     padding: 5px 15px;
-    border: 1px solid #f29f05;
+    border: 1px solid #ff8000;
     border-radius: 10px;
     font-size: 14px;
 }
@@ -444,19 +444,19 @@ header {
 a.button-2.non {
     background-image: -webkit-linear-gradient(
         30deg,
-        #f29f0500 50%,
+        #ff800000 50%,
         transparent 50%
     );
 }
 a.button-2.non:hover {
     color: #fff;
-    border: 3px solid #f29f05;
+    border: 3px solid #ff8000;
     background-image: -webkit-linear-gradient(
         30deg,
-        #f29f05 50%,
+        #ff8000 50%,
         transparent 50%
     );
-    background-image: linear-gradient(30deg, #f29f05 50%, transparent 57%);
+    background-image: linear-gradient(30deg, #ff8000 50%, transparent 57%);
     background-size: 500px;
     background-repeat: no-repeat;
     background-position: 0%;
@@ -644,7 +644,7 @@ a.button.button-2 i {
     position: absolute;
     height: 410px;
     width: 643px;
-    border: 7px solid #f29f05;
+    border: 7px solid #ff8000;
     border-radius: 20px;
     left: 4%;
     top: 8%;
@@ -879,7 +879,7 @@ ul.social-media li a i {
     justify-content: center;
 }
 ul.social-media li a i:hover {
-    border: 1px #f29f05;
+    border: 1px #ff8000;
     color: white;
 }
 .footer-two {
@@ -1049,7 +1049,7 @@ ul.paragraph li i {
 .video-section-img:before {
     content: "";
     position: absolute;
-    border: 7px #f29f05 solid;
+    border: 7px #ff8000 solid;
     height: 567px;
     width: 579px;
     border-radius: 50px;
@@ -1065,7 +1065,7 @@ ul.paragraph li i {
     top: 50%;
     font-size: 30px;
     transform: translate(-50%, -50%);
-    background-color: #f29f05;
+    background-color: #ff8000;
     height: 70px;
     width: 70px;
     justify-content: center;
@@ -1112,7 +1112,7 @@ ul.paragraph li i {
     color: #787878;
 }
 .our-team ul.social-media li a i:hover {
-    border: 1px #f29f05;
+    border: 1px #ff8000;
     color: white;
 }
 .our-team:before {
@@ -1251,7 +1251,7 @@ ul.paragraph li i {
 }
 .subscribe-section.about:before {
     content: "";
-    background-color: #f29f05c4;
+    background-color: #ff8000c4;
     width: 100%;
     height: 700px;
     position: absolute;
@@ -1432,13 +1432,13 @@ ul.paragraph li i {
 .nav-pills .nav-link.active,
 .nav-pills .show > .nav-link {
     background-color: transparent;
-    color: #f29f05;
+    color: #ff8000;
     font-size: 18px;
     font-weight: bold;
 }
 .nav-link:focus,
 .nav-link:hover {
-    color: #f29f05;
+    color: #ff8000;
 }
 .nav-pills .nav-link.active {
     position: relative;
@@ -1463,7 +1463,7 @@ ul.paragraph li i {
 .like-meal a {
     font-size: 18px;
     font-weight: bold;
-    color: #f29f05;
+    color: #ff8000;
     padding-right: 20px;
 }
 .like-meal i {
@@ -1583,7 +1583,7 @@ header.two {
     text-indent: -100px;
     overflow: hidden;
     position: relative;
-    border: 1px solid #f29f05;
+    border: 1px solid #ff8000;
     border-radius: 8px;
 }
 .qty-input .qty-count:before,
@@ -1593,7 +1593,7 @@ header.two {
     width: 10px;
     position: absolute;
     display: block;
-    background: #f29f05;
+    background: #ff8000;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1655,14 +1655,14 @@ header.two {
     width: 100%;
     padding: 15px;
     border-radius: 15px;
-    border: 1px solid #f29f05;
+    border: 1px solid #ff8000;
 }
 .button-price i {
     padding-left: 20px;
 }
 .button-price:hover {
     background-color: transparent;
-    color: #f29f05;
+    color: #ff8000;
 }
 /*-------------            Service page        -------------*/
 .about-text a {
@@ -1704,7 +1704,7 @@ header.two {
 }
 .hero-section-img-service:before {
     position: absolute;
-    border: #f29f05 7px solid;
+    border: #ff8000 7px solid;
     height: 616px;
     width: 500px;
     content: "";
@@ -1744,7 +1744,7 @@ header.two {
 .services-card-style i:after {
     position: absolute;
     content: "";
-    border: #f29f05 3px solid;
+    border: #ff8000 3px solid;
     height: 72px;
     width: 70px;
     border-radius: 20px;
@@ -1760,7 +1760,7 @@ header.two {
     border-radius: 60px;
 }
 .services-card-style:hover {
-    border: 1px solid #f29f05;
+    border: 1px solid #ff8000;
     border-radius: 10px;
 }
 .services-card-style:hover i:after {
@@ -1803,7 +1803,7 @@ header.two {
 }
 .sit-at-img:before {
     border-radius: 40px;
-    border: 8px solid #f29f05;
+    border: 8px solid #ff8000;
     content: "";
     position: absolute;
     height: 600px;
@@ -2012,7 +2012,7 @@ ul.food-dishes li {
     position: absolute;
     content: "";
     border-radius: 20px;
-    border: 8px solid #f29f05;
+    border: 8px solid #ff8000;
     height: 443px;
     width: 640px;
     left: 5%;
@@ -2682,7 +2682,7 @@ form.checkout-form {
 
 /* CHECKED STYLES */
 [type="radio"]:checked + img {
-    outline: 1px solid #f29f05;
+    outline: 1px solid #ff8000;
     padding: 12px 18px;
 }
 .tab-pane label {
@@ -2728,7 +2728,7 @@ form.checkout-form {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-one input:checked ~ .checkmark {
-    background-color: #f29f05;
+    background-color: #ff8000;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -2947,7 +2947,7 @@ body.menu-layer:before {
 .menu-cls-btn:hover .cls-leftright,
 .menu-cls-btn:hover .cls-leftright,
 .menu-cls-btn:hover .cls-rightleft {
-    background-color: #f29f05;
+    background-color: #ff8000;
 }
 .menu-cls-btn:hover .cls-leftright {
     -webkit-transform: rotate(-45deg);
@@ -2993,7 +2993,8 @@ body.menu-layer:before {
     padding-top: 20px;
 }
 .header-style .extras.bag {
-    display: none;
+    display: flex;
+    align-items: center;
 }
 .header-style {
     display: flex;
@@ -3349,7 +3350,7 @@ li.menu-item-has-children.active {
 .bar-menu i {
     color: black;
     background-color: transparent;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -3450,4 +3451,28 @@ li.menu-item-has-children.active {
     justify-content: center;
     height: 100%;
     position: fixed;
+}
+
+.search-bar-input {
+    outline: 0;
+    background-color: white;
+    border: 1px solid #cfcfcf;
+    width: 80%;
+    height: 55px;
+    border-radius: 12px;
+    padding-left: 20px;
+    color: #cfcfcf;
+}
+
+.search-bar-input::placeholder {
+    color: #cfcfcf;
+}
+.search-bar-btn {
+    position: absolute;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    right: 20%;
+}
+.search-form {
+    position: relative;
 }

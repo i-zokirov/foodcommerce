@@ -1,6 +1,8 @@
 import CountTo from "@/components/CountTo";
+import "@/styles/Home.module.css";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
+import Link from "next/link";
 export default function Home() {
     return (
         <Main meta={<Meta title="" description="" />}>
@@ -17,23 +19,24 @@ export default function Home() {
                             data-aos-duration={300}
                         >
                             <div className="restaurant">
-                                <h1>The Best restaurants in your home</h1>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit, sed do eiusmod tempor.
-                                </p>
-                                <div className="nice-select-one">
-                                    <select className="nice-select Advice">
-                                        <option>Choose a Restaurant</option>
-                                        <option>Choose a Restaurant 1</option>
-                                        <option>Choose a Restaurant 2</option>
-                                        <option>Choose a Restaurant 3</option>
-                                        <option>Choose a Restaurant 4</option>
-                                    </select>
-                                    <a href="#" className="button button-2">
-                                        Order Now
-                                    </a>
-                                </div>
+                                <h1>Time to order food.</h1>
+                                <h2>Find restaurants in your area.</h2>
+                                <form
+                                    data-aos="flip-up"
+                                    data-aos-delay={200}
+                                    data-aos-duration={300}
+                                    className="search-form"
+                                >
+                                    <input
+                                        className="search-bar-input"
+                                        type="text"
+                                        name="email"
+                                        placeholder="Enter your street address"
+                                    />
+                                    <button className="button button-2 search-bar-btn">
+                                        <i className="fa-solid fa-magnifying-glass" />
+                                    </button>
+                                </form>
                             </div>
                         </div>
                         <div
@@ -43,10 +46,7 @@ export default function Home() {
                             data-aos-duration={400}
                         >
                             <div className="img-restaurant">
-                                <img
-                                    alt="man"
-                                    src="https://via.placeholder.com/680x720"
-                                />
+                                <img alt="man" src="/assets/img/photo-1.png" />
                                 <div className="wilmington">
                                     <img
                                         alt="img"
@@ -101,7 +101,7 @@ export default function Home() {
                             <div className="work-card">
                                 <img
                                     alt="img"
-                                    src="https://via.placeholder.com/300x154"
+                                    src="/assets/img/illustration-1.png"
                                 />
                                 <h4>
                                     <span>01</span> Select Restaurant
@@ -123,7 +123,7 @@ export default function Home() {
                             <div className="work-card">
                                 <img
                                     alt="img"
-                                    src="https://via.placeholder.com/300x154"
+                                    src="/assets/img/illustration-2.png"
                                 />
                                 <h4>
                                     <span>02</span> Select menu
@@ -145,7 +145,7 @@ export default function Home() {
                             <div className="work-card">
                                 <img
                                     alt="img"
-                                    src="https://via.placeholder.com/300x154"
+                                    src="/assets/img/illustration-3.png"
                                 />
                                 <h4>
                                     <span>03</span> Wait for delivery
@@ -308,13 +308,13 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="button-gap">
-                        <a
-                            href="restaurants.html"
+                        <Link
+                            href="/restaurants"
                             className="button button-2 non"
                         >
                             See All
                             <i className="fa-solid fa-arrow-right" />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
@@ -333,10 +333,7 @@ export default function Home() {
                             data-aos-duration={300}
                         >
                             <div className="food-photo-section">
-                                <img
-                                    alt="img"
-                                    src="https://via.placeholder.com/676x700"
-                                />
+                                <img alt="img" src="assets/img/photo-3.png" />
                                 <a href="#" className="one">
                                     <i className="fa-solid fa-burger" />
                                     Burgers
@@ -368,9 +365,12 @@ export default function Home() {
                                     et molestie. Vitae elementum curabitur vitae
                                     nunc.
                                 </p>
-                                <a href="#" className="button button-2">
+                                <Link
+                                    href="/restaurants"
+                                    className="button button-2"
+                                >
                                     Order Now
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -539,7 +539,7 @@ export default function Home() {
                             <div className="reviews-img">
                                 <img
                                     alt="photo"
-                                    src="https://via.placeholder.com/676x585"
+                                    src="/assets/img/photo-4.png"
                                 />
                                 <i className="fa-regular fa-thumbs-up" />
                             </div>
@@ -562,19 +562,16 @@ export default function Home() {
                             data-aos-duration={300}
                         >
                             <div className="join-img">
-                                <img
-                                    alt="img"
-                                    src="https://via.placeholder.com/626x393"
-                                />
+                                <img alt="img" src="assets/img/photo-6.jpg" />
                                 <div className="Join-courier">
                                     <h3>Join Courier</h3>
-                                    <a
-                                        href="become-partner.html"
+                                    <Link
+                                        href="/become-partner"
                                         className="button button-2"
                                     >
                                         Learn More{" "}
                                         <i className="fa-solid fa-arrow-right" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -585,19 +582,16 @@ export default function Home() {
                             data-aos-duration={400}
                         >
                             <div className="join-img">
-                                <img
-                                    alt="img"
-                                    src="https://via.placeholder.com/626x393"
-                                />
+                                <img alt="img" src="assets/img/photo-7.jpg" />
                                 <div className="Join-courier">
                                     <h3>Join Merchant</h3>
-                                    <a
-                                        href="become-partner.html"
+                                    <Link
+                                        href="/become-partner"
                                         className="button button-2"
                                     >
                                         Learn More{" "}
                                         <i className="fa-solid fa-arrow-right" />
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -815,7 +809,7 @@ export default function Home() {
                             <div className="img-subscribe">
                                 <img
                                     alt="Illustration"
-                                    src="https://via.placeholder.com/676x403"
+                                    src="/assets/img/illustration-4.png"
                                 />
                             </div>
                         </div>
