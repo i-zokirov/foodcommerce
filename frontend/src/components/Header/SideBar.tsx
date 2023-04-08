@@ -2,14 +2,11 @@ import React from "react";
 import Link from "next/link";
 import NavLogo from "../logo/NavLogo";
 
-interface MobileNavProps {
+interface SideBarProps {
     isMenuOpen: boolean;
     handleMenuOpen: () => void;
 }
-const MobileNav: React.FC<MobileNavProps> = ({
-    isMenuOpen,
-    handleMenuOpen,
-}) => {
+const SideBar: React.FC<SideBarProps> = ({ isMenuOpen, handleMenuOpen }) => {
     return (
         <div
             className={`mobile-nav hmburger-menu ${isMenuOpen ? "open" : ""}`}
@@ -72,4 +69,4 @@ const MobileNav: React.FC<MobileNavProps> = ({
     );
 };
 
-export default MobileNav;
+export default SideBar;

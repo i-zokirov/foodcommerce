@@ -185,10 +185,15 @@ figure {
     border-right: 0;
 }
 header {
-    position: absolute;
+    position: fixed;
     padding: 30px 0;
     width: 100%;
     z-index: 1;
+    background-color: transparent;
+    transition: background-color 0.3s ease-in-out;
+}
+.scrolled {
+    background-color: white;
 }
 /*------------------------        navbar end      --------------------------*/
 /*------------------------        restaurant      --------------------------*/

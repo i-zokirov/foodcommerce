@@ -1038,6 +1038,25 @@
         padding-top: 20px;
     }
 }
+
+@media (max-width: 800px) {
+    .restaurant {
+        text-align: center;
+    }
+    .restaurant h1 {
+        font-size: 48px;
+        line-height: 50px;
+    }
+    .restaurant h2 {
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    .search-bar-btn {
+        right: 20px;
+    }
+}
+
 @media (max-width: 480px) {
     .wait-a-minute h2 {
         font-size: 38px;
@@ -1048,8 +1067,12 @@
         top: 18%;
     }
     .restaurant h1 {
-        font-size: 42px;
+        font-size: 34px;
         line-height: 50px;
+    }
+    .restaurant h2 {
+        font-size: 28px;
+        line-height: 44px;
     }
     .Join-courier h3 {
         font-size: 24px;

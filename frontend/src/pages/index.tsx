@@ -3,6 +3,7 @@ import "@/styles/Home.module.css";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
 import Link from "next/link";
+
 export default function Home() {
     return (
         <Main meta={<Meta title="" description="" />}>
@@ -13,7 +14,7 @@ export default function Home() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div
-                            className="col-lg-6"
+                            className="col-lg-6 "
                             data-aos="fade-up"
                             data-aos-delay={200}
                             data-aos-duration={300}

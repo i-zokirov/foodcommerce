@@ -1,4 +1,5 @@
 import PageLoader from "@/components/PageLoader";
+import ShoppingCart from "@/components/ShoppingCart";
 import Footer from "@/components/footer/Footer";
 import Header from "@/components/header/Header";
 import React from "react";
@@ -13,6 +14,7 @@ const Main: React.FC<IMainProps> = ({ children }) => {
     return (
         <React.Fragment>
             <Header />
+            <ShoppingCart />
             <PageLoader />
             <main>{children}</main>
             <Footer />
