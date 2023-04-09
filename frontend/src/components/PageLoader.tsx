@@ -1,8 +1,13 @@
-import React from "react";
+import { useAppSelector } from "@/redux/hooks";
+import React, { useEffect } from "react";
 
 const PageLoader = () => {
+    const { isLoading } = useAppSelector((state) => state.pageLoader);
     return (
-        <div className="page-loader" style={{ display: "none" }}>
+        <div
+            className="page-loader"
+            style={{ display: isLoading ? "block" : "none" }}
+        >
             <div className="wrapper">
                 <div className="circle" />
                 <div className="circle" />

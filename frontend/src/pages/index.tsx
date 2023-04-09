@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import CountTo from "@/components/CountTo";
 import "@/styles/Home.module.css";
 import Main from "@/layouts/Main";
@@ -5,8 +6,14 @@ import Meta from "@/layouts/Meta";
 import Link from "next/link";
 import Search from "@/components/Search";
 import Button from "@/components/Button";
-
+import { useAppDispatch } from "@/redux/hooks";
+import { setIsLoading } from "@/redux/features/pageLoaderSlice";
 export default function Home() {
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(setIsLoading(false));
+    }, []);
     return (
         <Main meta={<Meta title="" description="" />}>
             <section
