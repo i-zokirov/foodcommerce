@@ -8,11 +8,15 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     createTypeOrmOptions(): TypeOrmModuleOptions {
         if (process.env.NODE_ENV === "development") {
             return {
-                type: "sqlite",
-                database: "foodcommerce.db",
-                entities: ["**/*.entity.js"],
-                synchronize: true,
+                type: "postgres",
+                database: this.configService.get<string>("DATABASE_NAME"),
+                port: this.configService.get<number>("DATABASE_PORT"),
+                host: this.configService.get<string>("DATABASE_HOST"),
+                username: this.configService.get<string>("DATABASE_USERNAME"),
+                password: this.configService.get<string>("DATABASE_PASSWORD"),
+                entities: [],
                 autoLoadEntities: true,
+                synchronize: true,
                 logging: true,
             };
         } else if (process.env.NODE_ENV === "production") {

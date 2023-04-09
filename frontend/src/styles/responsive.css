@@ -948,6 +948,9 @@
     .error-page img {
         width: 100%;
     }
+    .about-text {
+        text-align: center;
+    }
     .thomas h6 {
         margin-top: 14px;
     }

@@ -313,7 +313,16 @@ header {
     height: 55px;
     line-height: 55px;
 }
-.button-2 {
+.button-small {
+    padding: 0 15px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button-contained {
     color: #fff;
     border: 2px solid #ff8000;
     background-image: -webkit-linear-gradient(
@@ -329,10 +338,12 @@ header {
     transition: background 300ms ease-in-out;
     line-height: 51px;
 }
-.button-2:hover {
+.button-contained:hover {
     background-position: 100%;
     background-color: transparent;
+    color: #ff8000;
 }
+
 /*------------- button end --------*/
 .bag i {
     background-color: white;
@@ -446,14 +457,15 @@ header {
 .button-gap a i {
     padding-left: 15px;
 }
-a.button-2.non {
+.button-outlined {
     background-image: -webkit-linear-gradient(
         30deg,
         #ff800000 50%,
         transparent 50%
     );
+    color: #ff8000;
 }
-a.button-2.non:hover {
+.button-outlined:hover {
     color: #fff;
     border: 3px solid #ff8000;
     background-image: -webkit-linear-gradient(
@@ -468,7 +480,7 @@ a.button-2.non:hover {
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
 }
-a.button-2.non {
+.button-outlined {
     background-position: 100%;
 }
 /*-------------     your-favorite-food      --------------*/
@@ -632,7 +644,7 @@ a.button-2.non {
     top: 65%;
     left: 10%;
 }
-a.button.button-2 i {
+.button-contained i {
     padding-left: 10px;
 }
 .Join-courier h3 {
@@ -1272,7 +1284,7 @@ ul.paragraph li i {
     left: 28%;
     color: #cfcfcf;
 }
-.subscribe-section.about .button-2 {
+.subscribe-section.about .button-contained {
     color: white;
     border: 3px solid #000;
     background-image: -webkit-linear-gradient(30deg, #000 50%, transparent 50%);
@@ -1649,7 +1661,7 @@ header.two {
     margin: 0px 10px;
     color: #363636;
 }
-.dish .button.button-2 {
+.dish .button.button-contained {
     width: 100%;
     justify-content: center;
     align-items: center;
@@ -1849,7 +1861,7 @@ ul.food-dishes li {
     margin-right: 18px;
     border-radius: 15px;
 }
-.sit-at-home-description .button-2 {
+.sit-at-home-description .button-contained {
     margin-top: 30px;
 }
 /*-------------------------       lunch-section        --------------- */

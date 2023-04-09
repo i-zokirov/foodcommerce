@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import NavLogo from "../logo/NavLogo";
-
+import { sidebarroutes } from "@/utils/AppConfig";
+import Button from "../Button";
 interface SideBarProps {
     isMenuOpen: boolean;
     handleMenuOpen: () => void;
@@ -17,31 +18,30 @@ const SideBar: React.FC<SideBarProps> = ({ isMenuOpen, handleMenuOpen }) => {
                     <NavLogo />
                 </Link>
             </div>
+            <div className="d-flex justify-content-around">
+                <Button
+                    type="link"
+                    href="/sign-up"
+                    size="small"
+                    variant="contained"
+                >
+                    Sign Up
+                </Button>
+                <Button
+                    type="link"
+                    href="/login"
+                    size="small"
+                    variant="outlined"
+                >
+                    Login
+                </Button>
+            </div>
             <ul>
-                <li>
-                    <Link href="/">Home</Link>
-                </li>
-                <li>
-                    <Link href="/restaurants">Restaurants</Link>
-                </li>
-                <li>
-                    <Link href="/restaurants?favourites=true">Favourites</Link>
-                </li>
-                <li>
-                    <Link href="/gift-cards">Gift Cards</Link>
-                </li>
-                <li>
-                    <Link href="/become-partner">Become Partner</Link>
-                </li>
-                <li>
-                    <Link href="/join-courier">Join Courier</Link>
-                </li>
-                <li>
-                    <Link href="/business">Delivery App For Business</Link>
-                </li>
-                <li>
-                    <Link href="/about.html">Need Help?</Link>
-                </li>
+                {sidebarroutes.map((route, index) => (
+                    <li key={index}>
+                        <Link href={route.path}>{route.name}</Link>
+                    </li>
+                ))}
 
                 {/* <li className="menu-item-has-children">
                     <Link href="#">Pages</Link>
@@ -53,10 +53,6 @@ const SideBar: React.FC<SideBarProps> = ({ isMenuOpen, handleMenuOpen }) => {
                      
                     </ul>
                 </li> */}
-
-                <li>
-                    <Link href="contact.html">Contact</Link>
-                </li>
             </ul>
 
             <a

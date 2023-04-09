@@ -40,7 +40,7 @@ export class Order {
     status: OrderStatus;
     @Column()
     total_order_items_price: number;
-    @Column({ default: OrderStatus.Placed })
+    @Column({ default: 0 })
     total_order_price: number;
     @Column({ default: false })
     is_paid: boolean;

@@ -3,6 +3,8 @@ import "@/styles/Home.module.css";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
 import Link from "next/link";
+import Search from "@/components/Search";
+import Button from "@/components/Button";
 
 export default function Home() {
     return (
@@ -22,22 +24,7 @@ export default function Home() {
                             <div className="restaurant">
                                 <h1>Time to order food.</h1>
                                 <h2>Find restaurants in your area.</h2>
-                                <form
-                                    data-aos="flip-up"
-                                    data-aos-delay={200}
-                                    data-aos-duration={300}
-                                    className="search-form"
-                                >
-                                    <input
-                                        className="search-bar-input"
-                                        type="text"
-                                        name="email"
-                                        placeholder="Enter your street address"
-                                    />
-                                    <button className="button button-2 search-bar-btn">
-                                        <i className="fa-solid fa-magnifying-glass" />
-                                    </button>
-                                </form>
+                                <Search />
                             </div>
                         </div>
                         <div
@@ -87,9 +74,8 @@ export default function Home() {
                     >
                         <h2>How it works</h2>
                         <p>
-                            Magna sit amet purus gravida quis blandit turpis
-                            cursus. Venenatis tellus in
-                            <br /> metus vulputate eu scelerisque felis.
+                            Welcome to our online food ordering system! Here's
+                            how it works:
                         </p>
                     </div>
                     <div className="row ">
@@ -108,10 +94,12 @@ export default function Home() {
                                     <span>01</span> Select Restaurant
                                 </h4>
                                 <p>
-                                    Non enim praesent elementum facilisis leo
-                                    vel fringilla. Lectus proin nibh nisl
-                                    condimentum id. Quis varius quam quisque id
-                                    diam vel.
+                                    Browse through our list of partner
+                                    restaurants and choose the one that
+                                    satisfies your cravings. We have a wide
+                                    variety of cuisines to choose from,
+                                    including Italian, Chinese, Indian, and
+                                    more!
                                 </p>
                             </div>
                         </div>
@@ -130,10 +118,12 @@ export default function Home() {
                                     <span>02</span> Select menu
                                 </h4>
                                 <p>
-                                    Eu mi bibendum neque egestas congue quisque.
-                                    Nulla facilisi morbi tempus iaculis urna id
-                                    volutpat lacus. Odio ut sem nulla pharetra
-                                    diam sit amet.
+                                    Once you've selected a restaurant, take a
+                                    look at their menu and choose the dishes
+                                    that you want to order. Our menus are
+                                    updated regularly, so you can be sure that
+                                    you're getting the most current options
+                                    available
                                 </p>
                             </div>
                         </div>
@@ -152,10 +142,13 @@ export default function Home() {
                                     <span>03</span> Wait for delivery
                                 </h4>
                                 <p>
-                                    Nunc lobortis mattis aliquam faucibus. Nibh
-                                    ipsum consequat nisl vel pretium lectus quam
-                                    id leo. A scelerisque purus semper eget.
-                                    Tincidunt arcu non.
+                                    After you've placed your order, all you need
+                                    to do is sit back, relax, and wait for your
+                                    food to be delivered to your doorstep. We'll
+                                    take care of everything else, from ensuring
+                                    that your food is prepared to your liking,
+                                    to ensuring that it's delivered to you
+                                    promptly and with a smile.
                                 </p>
                             </div>
                         </div>
@@ -309,13 +302,15 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="button-gap">
-                        <Link
+                        <Button
                             href="/restaurants"
-                            className="button button-2 non"
+                            type="link"
+                            variant="outlined"
+                            size="medium"
                         >
                             See All
                             <i className="fa-solid fa-arrow-right" />
-                        </Link>
+                        </Button>
                     </div>
                 </div>
             </section>
@@ -366,12 +361,14 @@ export default function Home() {
                                     et molestie. Vitae elementum curabitur vitae
                                     nunc.
                                 </p>
-                                <Link
+                                <Button
                                     href="/restaurants"
-                                    className="button button-2"
+                                    type="link"
+                                    variant="contained"
+                                    size="medium"
                                 >
                                     Order Now
-                                </Link>
+                                </Button>
                             </div>
                         </div>
                     </div>
@@ -566,13 +563,15 @@ export default function Home() {
                                 <img alt="img" src="assets/img/photo-6.jpg" />
                                 <div className="Join-courier">
                                     <h3>Join Courier</h3>
-                                    <Link
-                                        href="/become-partner"
-                                        className="button button-2"
+                                    <Button
+                                        href="/join-courier"
+                                        type="link"
+                                        size="small"
                                     >
+                                        {" "}
                                         Learn More{" "}
                                         <i className="fa-solid fa-arrow-right" />
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -586,13 +585,15 @@ export default function Home() {
                                 <img alt="img" src="assets/img/photo-7.jpg" />
                                 <div className="Join-courier">
                                     <h3>Join Merchant</h3>
-                                    <Link
+                                    <Button
                                         href="/become-partner"
-                                        className="button button-2"
+                                        type="link"
+                                        size="small"
                                     >
+                                        {" "}
                                         Learn More{" "}
                                         <i className="fa-solid fa-arrow-right" />
-                                    </Link>
+                                    </Button>
                                 </div>
                             </div>
                         </div>
@@ -615,9 +616,9 @@ export default function Home() {
                                     alt="man"
                                     src="https://via.placeholder.com/626x269"
                                 />
-                                <div className="quickeat">
+                                <div className="DeliveryApp">
                                     <a href="#">news</a>
-                                    <a href="#">quickeat</a>
+                                    <a href="#">DeliveryApp</a>
                                 </div>
                                 <h3>
                                     We Have Received An Award For The Quality Of
@@ -638,7 +639,7 @@ export default function Home() {
                                     <li>
                                         <h6>
                                             <i className="fa-solid fa-user" />
-                                            by Quickeat
+                                            by DeliveryApp
                                         </h6>
                                     </li>
                                     <li>
@@ -668,14 +669,14 @@ export default function Home() {
                                     src="https://via.placeholder.com/200x200"
                                 />
                                 <div className="news-post-two-data">
-                                    <div className="quickeat">
+                                    <div className="DeliveryApp">
                                         <a href="#">restaurants</a>
                                         <a href="#">cooking</a>
                                     </div>
                                     <h6>
                                         <a href="single-blog.html">
-                                            With Quickeat you can order food for
-                                            the whole day
+                                            With DeliveryApp you can order food
+                                            for the whole day
                                         </a>
                                     </h6>
                                     <p>
@@ -687,7 +688,7 @@ export default function Home() {
                                         <li>
                                             <h6>
                                                 <i className="fa-solid fa-user" />
-                                                by Quickeat
+                                                by DeliveryApp
                                             </h6>
                                         </li>
                                         <li>
@@ -711,7 +712,7 @@ export default function Home() {
                                     src="https://via.placeholder.com/200x200"
                                 />
                                 <div className="news-post-two-data">
-                                    <div className="quickeat">
+                                    <div className="DeliveryApp">
                                         <a href="#">restaurants</a>
                                         <a href="#">cooking</a>
                                     </div>
@@ -729,7 +730,7 @@ export default function Home() {
                                         <li>
                                             <h6>
                                                 <i className="fa-solid fa-user" />
-                                                by Quickeat
+                                                by DeliveryApp
                                             </h6>
                                         </li>
                                         <li>
@@ -753,7 +754,7 @@ export default function Home() {
                                     src="https://via.placeholder.com/200x200"
                                 />
                                 <div className="news-post-two-data">
-                                    <div className="quickeat">
+                                    <div className="DeliveryApp">
                                         <a href="#">restaurants</a>
                                         <a href="#">cooking</a>
                                     </div>
@@ -772,7 +773,7 @@ export default function Home() {
                                         <li>
                                             <h6>
                                                 <i className="fa-solid fa-user" />
-                                                by Quickeat
+                                                by DeliveryApp
                                             </h6>
                                         </li>
                                         <li>
@@ -832,9 +833,9 @@ export default function Home() {
                                         name="email"
                                         placeholder="Enter email address"
                                     />
-                                    <button className="button button-2">
+                                    <Button href="#" type="button" size="small">
                                         Subscribe
-                                    </button>
+                                    </Button>
                                 </form>
                             </div>
                         </div>

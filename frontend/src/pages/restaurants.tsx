@@ -1,6 +1,8 @@
 import React from "react";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
+import Link from "next/link";
+import Search from "@/components/Search";
 const restaurants = () => {
     return (
         <Main meta={<Meta title="" description="" />}>
@@ -16,13 +18,13 @@ const restaurants = () => {
                             <div className="about-text">
                                 <ul className="crumbs d-flex">
                                     <li>
-                                        <a href="index.html">Home</a>
+                                        <Link href="/">Home</Link>
                                     </li>
                                     <li className="two">
-                                        <a href="index.html">
+                                        <Link href="/restaurants">
                                             <i className="fa-solid fa-right-long" />
                                             Restaurants
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                                 <h2>Restaurants</h2>
@@ -32,23 +34,7 @@ const restaurants = () => {
                                     praesent semper.
                                 </p>
                                 <div className="restaurant">
-                                    <div className="nice-select-one">
-                                        <select className="nice-select Advice">
-                                            <option>Choose a Restaurant</option>
-                                            <option>
-                                                Choose a Restaurant 1
-                                            </option>
-                                            <option>
-                                                Choose a Restaurant 2
-                                            </option>
-                                            <option>
-                                                Choose a Restaurant 3
-                                            </option>
-                                            <option>
-                                                Choose a Restaurant 4
-                                            </option>
-                                        </select>
-                                    </div>
+                                    <Search />
                                 </div>
                             </div>
                         </div>
@@ -61,7 +47,7 @@ const restaurants = () => {
                             <div className="restaurants-girl-img food-photo-section">
                                 <img
                                     alt="man"
-                                    src="https://via.placeholder.com/676x585"
+                                    src="/assets/img/illustration-5.png"
                                 />
                                 <a href="#" className="one">
                                     <i className="fa-solid fa-burger" />
@@ -119,7 +105,10 @@ const restaurants = () => {
                                 <div className="choose-lunches">
                                     <h2>Choose 2 lunches</h2>
                                     <h3>pay for one</h3>
-                                    <a href="#" className="button button-2 non">
+                                    <a
+                                        href="#"
+                                        className="button button-contained button-outlined"
+                                    >
                                         Order Now
                                         <i className="fa-solid fa-arrow-right" />
                                     </a>
@@ -391,7 +380,7 @@ const restaurants = () => {
                             <div className="img-subscribe">
                                 <img
                                     alt="Illustration"
-                                    src="https://via.placeholder.com/676x403"
+                                    src="/assets/img/illustration-4.png"
                                 />
                             </div>
                         </div>
@@ -413,7 +402,7 @@ const restaurants = () => {
                                         name="email"
                                         placeholder="Enter email address"
                                     />
-                                    <button className="button button-2">
+                                    <button className="button button-contained">
                                         Subscribe
                                     </button>
                                 </form>

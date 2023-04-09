@@ -7,7 +7,7 @@ import {
 } from "typeorm";
 import { Restaurant } from "../../restaurants/entities/restaurant.entity";
 import { MenuCategory } from "../../menu_categories/entities/menu_category.entity";
-import { MenuItemOption } from "src/menu_item_options/entities/menu_item_option.entity";
+import { MenuItemOption } from "../../menu_item_options/entities/menu_item_option.entity";
 
 @Entity()
 export class MenuItem {

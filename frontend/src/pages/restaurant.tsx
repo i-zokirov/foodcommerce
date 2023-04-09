@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
+import Link from "next/link";
 const restaurant = () => {
     return (
         <Main meta={<Meta title="" description="" />}>
@@ -21,13 +22,13 @@ const restaurant = () => {
                             <div className="about-text">
                                 <ul className="crumbs d-flex">
                                     <li>
-                                        <a href="index.html">Home</a>
+                                        <Link href="/">Home</Link>
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <Link href="/restaurants">
                                             <i className="fa-solid fa-right-long" />
                                             Restaurants
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="two">
                                         <a href="index.html">
