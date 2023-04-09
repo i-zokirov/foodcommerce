@@ -754,6 +754,14 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .login-page {
+        background-image: none;
+    }
+
+    .login-page .form-col {
+        position: absolute;
+    }
 }
 @media (max-width: 768px) {
     .error-page form input[type="text"],
@@ -1039,6 +1047,10 @@
     }
     .hading p {
         padding-top: 20px;
+    }
+
+    .login-page .image-col {
+        display: none;
     }
 }
 
