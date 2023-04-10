@@ -50,11 +50,9 @@ export class Restaurant {
     tax_price: number;
     @Column({ default: true })
     in_store_pickup: boolean;
-    @OneToMany(
-        () => OpeningHours,
-        (openinghours) => openinghours.restaurant_id,
-        { onDelete: "CASCADE" }
-    )
+    @OneToMany(() => OpeningHours, (openinghours) => openinghours.restaurant, {
+        onDelete: "CASCADE",
+    })
     opening_hours: OpeningHours[];
     @CreateDateColumn()
     createdAt: Date;

@@ -5,8 +5,6 @@ import { Restaurant } from "./restaurant.entity";
 export class OpeningHours {
     @PrimaryGeneratedColumn("uuid")
     id: string;
-    @Column()
-    restaurant_id: string;
     @ManyToOne(() => Restaurant, (restaurant) => restaurant.opening_hours, {
         onDelete: "CASCADE",
     })

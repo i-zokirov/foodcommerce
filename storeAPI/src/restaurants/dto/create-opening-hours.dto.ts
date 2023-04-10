@@ -11,15 +11,6 @@ import { IsOpeningBeforeClosing } from "src/validators/openingbeforeclosing.vali
 
 export class CreateOpeningHoursDto {
     @ApiProperty({
-        type: String,
-        example: "e80a7ed9-bb55-4ebc-afd8-5ea62cbab3b2",
-        description: "The ID of the restaurant",
-    })
-    @IsNotEmpty()
-    @IsString()
-    restaurant_id: string;
-
-    @ApiProperty({
         type: Number,
         example: "1",
         description: "0 to 6 integer indicating day of the week",

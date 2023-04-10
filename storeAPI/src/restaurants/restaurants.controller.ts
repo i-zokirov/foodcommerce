@@ -79,13 +79,12 @@ export class RestaurantsController {
         if (!restaurant) {
             throw new NotFoundException("Restaurant not found");
         }
-        const { opening_time, closing_time, ...rest } = createOpeningHoursDto;
+        const { opening_time, closing_time, weekday } = createOpeningHoursDto;
         const openinghour: Partial<OpeningHours> = {
             restaurant,
-            restaurant_id: restaurant.id,
             opening_time: new Date(opening_time),
             closing_time: new Date(closing_time),
-            ...rest,
+            weekday,
         };
         return this.openingHoursService.create(restaurant.id, openinghour);
     }

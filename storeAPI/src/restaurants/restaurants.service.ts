@@ -20,15 +20,7 @@ export class RestaurantsService {
     }
 
     findAll() {
-        return this.repository
-            .createQueryBuilder("restaurant")
-            .leftJoinAndMapMany(
-                "restaurant.opening_hours",
-                "opening_hours",
-                "opening_hours",
-                "opening_hours.restaurant_id = restaurant.id"
-            )
-            .getMany();
+        return this.repository.find({ relations: ["opening_hours"] });
     }
 
     findOpenRestaurants() {
@@ -43,7 +35,7 @@ export class RestaurantsService {
                 "restaurant.opening_hours",
                 "opening_hours",
                 "opening_hours",
-                "opening_hours.restaurant_id = restaurant.id"
+                "opening_hours.restaurant.id = restaurant.id"
             )
             .where("opening_hours.weekday = :currentDayOfWeek", {
                 currentDayOfWeek,
@@ -58,31 +50,17 @@ export class RestaurantsService {
     }
 
     findUserRestaurants(userId: string) {
-        return this.repository
-            .createQueryBuilder("restaurant")
-            .leftJoinAndMapMany(
-                "restaurant.opening_hours",
-                "opening_hours",
-                "opening_hours",
-                "opening_hours.restaurant_id = restaurant.id"
-            )
-            .leftJoinAndSelect("restaurant.managers", "managers")
-            .where("managers.id = :userId", { userId })
-            .getMany();
+        return this.repository.find({
+            where: { managers: { id: userId } },
+            relations: ["opening_hours", "managers"],
+        });
     }
 
     findOne(id: string) {
-        return this.repository
-            .createQueryBuilder("restaurant")
-            .leftJoinAndMapMany(
-                "restaurant.opening_hours",
-                "opening_hours",
-                "opening_hours",
-                "opening_hours.restaurant_id = restaurant.id"
-            )
-            .leftJoinAndSelect("restaurant.managers", "managers")
-            .where("restaurant.id = :id", { id })
-            .getOne();
+        return this.repository.findOne({
+            where: { id },
+            relations: ["opening_hours", "managers"],
+        });
     }
 
     async update(

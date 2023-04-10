@@ -9,6 +9,12 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
         if (process.env.NODE_ENV === "development") {
             return {
                 type: "postgres",
+                // database: "foodcommerce.db",
+                // entities: [],
+                // synchronize: true,
+                // autoLoadEntities: true,
+                // logging: true,
+
                 database: this.configService.get<string>("DATABASE_NAME"),
                 port: this.configService.get<number>("DATABASE_PORT"),
                 host: this.configService.get<string>("DATABASE_HOST"),

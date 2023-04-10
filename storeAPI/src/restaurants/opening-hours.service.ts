@@ -12,7 +12,7 @@ export class OpeningHoursService {
 
     async create(restaurantId: string, attrs: Partial<OpeningHours>) {
         const openingHour = await this.repository.findOne({
-            where: { restaurant_id: restaurantId, weekday: attrs.weekday },
+            where: { restaurant: { id: restaurantId }, weekday: attrs.weekday },
         });
         if (openingHour) {
             Object.assign(openingHour, attrs);
@@ -25,7 +25,7 @@ export class OpeningHoursService {
 
     findAll(restaurantId: string) {
         return this.repository.find({
-            where: { restaurant_id: restaurantId },
+            where: { restaurant: { id: restaurantId } },
             order: {
                 weekday: "ASC",
             },

@@ -1,6 +1,7 @@
 import { Expose, Transform } from "class-transformer";
 import { User } from "src/users/entities/user.entity";
 import { OpeningHours } from "../entities/opening_hours.entity";
+import { OpeningHoursDto } from "./opening-hours.dto";
 
 export class RestaurantDto {
     @Expose()
@@ -34,7 +35,8 @@ export class RestaurantDto {
     @Expose()
     in_store_pickup: boolean;
     @Expose()
-    opening_hours: OpeningHours[];
+    @Transform(({ obj }) => obj.opening_hours.map((openinghour) => openinghour))
+    opening_hours: OpeningHoursDto[];
     @Expose()
     @Transform(({ obj }) =>
         obj.managers && obj.managers.length
