@@ -1,0 +1,72 @@
+[
+    {
+        "email": "anvar_01@gmail.com",
+        "password": "password123",
+        "firstname": "Anvar",
+        "lastname": "Nurmatov",
+        "role": "Customer"
+    },
+    {
+        "email": "aziza_01@gmail.com",
+        "password": "password123",
+        "firstname": "Aziza",
+        "lastname": "Ismailova",
+        "role": "Customer"
+    },
+    {
+        "email": "bekzod_01@gmail.com",
+        "password": "password123",
+        "firstname": "Bekzod",
+        "lastname": "Abdullaev",
+        "role": "Customer"
+    },
+    {
+        "email": "davron_01@gmail.com",
+        "password": "password123",
+        "firstname": "Davron",
+        "lastname": "Ergashev",
+        "role": "Customer"
+    },
+    {
+        "email": "fazliddin_01@gmail.com",
+        "password": "password123",
+        "firstname": "Fazliddin",
+        "lastname": "Umarov",
+        "role": "Customer"
+    },
+    {
+        "email": "gulnoza_01@gmail.com",
+        "password": "password123",
+        "firstname": "Gulnoza",
+        "lastname": "Yunusova",
+        "role": "Customer"
+    },
+    {
+        "email": "ilhom_01@gmail.com",
+        "password": "password123",
+        "firstname": "Ilhom",
+        "lastname": "Nigmatov",
+        "role": "Customer"
+    },
+    {
+        "email": "jamilya_01@gmail.com",
+        "password": "password123",
+        "firstname": "Jamilya",
+        "lastname": "Mukhamedova",
+        "role": "Customer"
+    },
+    {
+        "email": "kamilla_01@gmail.com",
+        "password": "password123",
+        "firstname": "Kamilla",
+        "lastname": "Karimova",
+        "role": "Customer"
+    },
+    {
+        "email": "shaxzod_01@gmail.com",
+        "password": "password123",
+        "firstname": "Shaxzod",
+        "lastname": "Qodirov",
+        "role": "Customer"
+    }
+]

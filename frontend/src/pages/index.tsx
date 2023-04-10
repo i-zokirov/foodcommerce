@@ -8,6 +8,7 @@ import Search from "@/components/Search";
 import Button from "@/components/Button";
 import { useAppDispatch } from "@/redux/hooks";
 import { setIsLoading } from "@/redux/features/pageLoaderSlice";
+
 export default function Home() {
     const dispatch = useAppDispatch();
 
