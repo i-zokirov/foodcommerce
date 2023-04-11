@@ -89,7 +89,7 @@ export class RestaurantsService {
     async remove(id: string, userId: string) {
         const restaurant = await this.repository.findOne({
             where: { id },
-            relations: { managers: true },
+            relations: ["managers"],
         });
         if (!restaurant) {
             throw new NotFoundException("Restaurant not found!");

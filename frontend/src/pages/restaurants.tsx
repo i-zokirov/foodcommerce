@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Main from "@/layouts/Main";
 import Meta from "@/layouts/Meta";
 import Link from "next/link";
 import Search from "@/components/Search";
+import { useAppDispatch } from "@/redux/hooks";
+import { getRestaurants } from "@/redux/features/restaurants/restaurantsSlice";
 const restaurants = () => {
+    const dispatch = useAppDispatch();
+    useEffect(() => {
+        dispatch(getRestaurants());
+    }, []);
     return (
         <Main meta={<Meta title="" description="" />}>
             <section className="hero-section about gap">

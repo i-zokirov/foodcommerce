@@ -5,7 +5,7 @@ export const AppConfig = {
     locale: "uz",
 };
 
-export const API_URL = "http://localhost:3000/api";
+export const API_URL = "https://foodcommerce-store-api.onrender.com";
 
 export const sidebarroutes: { path: string; name: string }[] = [
     {

@@ -35,7 +35,11 @@ export class RestaurantDto {
     @Expose()
     in_store_pickup: boolean;
     @Expose()
-    @Transform(({ obj }) => obj.opening_hours.map((openinghour) => openinghour))
+    @Transform(({ obj }) =>
+        obj.opening_hours && obj.opening_hours.length
+            ? obj.opening_hours.map((openinghour) => openinghour)
+            : []
+    )
     opening_hours: OpeningHoursDto[];
     @Expose()
     @Transform(({ obj }) =>
