@@ -9,20 +9,13 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
         if (process.env.NODE_ENV === "development") {
             return {
                 type: "postgres",
-                // database: "foodcommerce.db",
-                // entities: [],
-                // synchronize: true,
-                // autoLoadEntities: true,
-                // logging: true,
-
                 database: this.configService.get<string>("DATABASE_NAME"),
                 port: this.configService.get<number>("DATABASE_PORT"),
                 host: this.configService.get<string>("DATABASE_HOST"),
                 username: this.configService.get<string>("DATABASE_USERNAME"),
                 password: this.configService.get<string>("DATABASE_PASSWORD"),
-                entities: [],
                 autoLoadEntities: true,
-                synchronize: true,
+                synchronize: false,
                 logging: true,
             };
         } else if (process.env.NODE_ENV === "production") {
@@ -33,10 +26,7 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
                 url: this.configService.get<string>("DATABASE_URL"),
                 username: this.configService.get<string>("DATABASE_USERNAME"),
                 password: this.configService.get<string>("DATABASE_PASSWORD"),
-                entities: ["**/*.entity.js"],
-                synchronize: this.configService.get<boolean>(
-                    "DATABASE_SYNCHRONIZE"
-                ),
+                synchronize: false,
                 autoLoadEntities: true,
                 ssl: {
                     rejectUnauthorized: true,
