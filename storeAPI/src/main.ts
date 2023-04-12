@@ -7,7 +7,7 @@ import {
 import { AppModule } from "./app.module";
 
 const customOptions: SwaggerCustomOptions = {
-    customSiteTitle: "BepulApi",
+    customSiteTitle: "Delivery App API Docs",
     swaggerOptions: {
         authActions: {
             bearerAuth: {
